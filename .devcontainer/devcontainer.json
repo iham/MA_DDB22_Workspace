@@ -1,0 +1,21 @@
+{
+    "name": "bit-workspace",
+
+    "build": { 
+      "dockerfile": "Dockerfile"
+    },
+  
+    "customizations": {
+      "vscode": {
+        "extensions": ["dbaeumer.vscode-eslint"]
+      }
+    },
+  
+    "forwardPorts": [3000],
+
+    // Folder Structure
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/node/bit,type=bind",
+    "workspaceFolder": "/home/node/bit"
+
+  }
+  
