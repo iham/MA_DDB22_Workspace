@@ -27,3 +27,5 @@ RUN <<EOF
     bit config set interactive false
     bit config set error_reporting true
 EOF
+
+USER root
