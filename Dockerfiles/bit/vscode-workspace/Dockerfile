@@ -1,15 +1,12 @@
-# This Dockerfile is based on code-server
-# https://github.com/coder/code-server/blob/main/ci/release-image/Dockerfile
-# and on bits vscode-workspace
-# https://hub.docker.com/r/bitcli/vscode-workspace
+# bitcli/vscode-workspace (https://hub.docker.com/r/bitcli/vscode-workspace) is somewhat outdated (OS, BVM, Node, NPM) and does not use the offcial Node Image.
 
-# bitcli/vscode-workspace is somewhat outdated (OS, BVM, Node, NPM)
-# and does not use the offcial Node Container .
- 
-# This image will be based on the current Node LTS (Iron) Container, that BIT supports and
-# has Debian 12.7, Node 20.17.0 and NPM 10.8.2
-ARG BASE=node:lts-iron
-FROM $BASE
+# For the Proof of Concept this will be changed by implementing the Docker Image based on
+# the VS Code Server Image (https://github.com/coder/code-server/blob/main/ci/release-image/Dockerfile)
+
+# This Docker Image will be derived from on the current Node LTS Version (20.17.0 - Iron) Image instead of a basic Debian.
+# This image also features the latest Debian (12.7 - Bookworm) and has Node Package Manager installed 
+
+FROM node:lts-iron
 
 CMD ["bash"]
 SHELL ["/bin/bash", "-c"]
@@ -28,7 +25,8 @@ RUN apt-get update \
     wget \
     zsh \
     && git lfs install \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && npm i npm@latest -g
 
 # https://wiki.debian.org/Locale#Manually
 RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
@@ -61,26 +59,21 @@ EXPOSE 8080
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
 
-# This way, if someone sets $DOCKER_USER, docker-exec will still work as
-# the uid will remain the same. note: only relevant if -u isn't passed to
-# docker-run.
-USER 1000
-ARG USER=node
-ENV USER=$USER
-WORKDIR /home/$USER
+USER node
+WORKDIR /home/node
 
 # Bit specific vs code extensions
 RUN code-server --install-extension=bit.vscode-bit --auth=none
 
 # Prepare for global npm package intallations
-ENV NPM_CONFIG_PREFIX="/home/${USER}/.npm-global"
-ENV PATH="$PATH:${NPM_CONFIG_PREFIX}/bin:/home/${USER}/bin"
+ENV NPM_CONFIG_PREFIX="/home/node/.npm-global"
+ENV PATH="$PATH:${NPM_CONFIG_PREFIX}/bin:/home/node/bin"
 
 # install BIT related
 # By not setting to nightly builts, we get the latest stable versions of bit
 # RUN bvm config set RELEASE_TYPE nightly
 ENV BIT_GLOBALS_DIR=/tmp/bit
-RUN npm install -g npm@10.8.3 @teambit/bvm \
+RUN npm install -g @teambit/bvm \
     && bvm upgrade --use-system-node \
     && echo "export PATH=$PATH:${PATH}" >> .profile
 
@@ -88,3 +81,5 @@ RUN bit config set analytics_reporting false \
     && bit config set no_warnings false  \ 
     && bit config set interactive false  \
     && bit config set error_reporting true
+
+WORKDIR /home/node/bit-workspace

@@ -1,21 +1,17 @@
 {
-    "name": "bit-workspace",
-
-    "build": { 
-      "dockerfile": "Dockerfile"
-    },
+    "image": "iham/bit-vscode-workspace:latest",
   
-    "customizations": {
-      "vscode": {
-        "extensions": ["dbaeumer.vscode-eslint"]
-      }
-    },
+    // "customizations": {
+    //   "vscode": {
+    //     "extensions": ["dbaeumer.vscode-eslint"]
+    //   }
+    // },
   
-    "forwardPorts": [3000],
+    "forwardPorts": [3030],
 
     // Folder Structure
-    "workspaceMount": "source=${localWorkspaceFolder},target=/home/node/bit,type=bind",
-    "workspaceFolder": "/home/node/bit"
+    "workspaceMount": "source=${localWorkspaceFolder}/bit-workspace,target=/home/node/bit-workspace,type=bind",
+    "workspaceFolder": "/home/node/bit-workspace"
 
   }
   
