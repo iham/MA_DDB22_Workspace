@@ -6,32 +6,17 @@
 # This Docker Image will be derived from on the current Node LTS Version (20.17.0 - Iron) Image instead of a basic Debian.
 # This image also features the latest Debian (12.7 - Bookworm) and has Node Package Manager installed 
 
-FROM node:lts-iron
+# FROM node:lts-iron
+FROM iham/bit-base:latest
 
-CMD ["bash"]
-SHELL ["/bin/bash", "-c"]
+# SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update \
     && apt-get install -y \
     dumb-init \
-    git-lfs \
-    htop \
-    locales \
-    lsb-release \
-    man-db \
-    nano \
     sudo \
-    vim-tiny \
-    wget \
-    zsh \
-    && git lfs install \
-    && rm -rf /var/lib/apt/lists/* \
-    && npm i npm@latest -g
+    && rm -rf /var/lib/apt/lists/*
 
-# https://wiki.debian.org/Locale#Manually
-RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
-    && locale-gen
-ENV LANG=en_US.UTF-8
 
 RUN adduser --gecos '' --disabled-password coder \
     && echo "coder ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/nopasswd
@@ -59,27 +44,12 @@ EXPOSE 8080
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8080", "."]
 
-USER node
-WORKDIR /home/node
-
 # Bit specific vs code extensions
 RUN code-server --install-extension=bit.vscode-bit --auth=none
 
 # Prepare for global npm package intallations
-ENV NPM_CONFIG_PREFIX="/home/node/.npm-global"
 ENV PATH="$PATH:${NPM_CONFIG_PREFIX}/bin:/home/node/bin"
 
-# install BIT related
-# By not setting to nightly builts, we get the latest stable versions of bit
-# RUN bvm config set RELEASE_TYPE nightly
-ENV BIT_GLOBALS_DIR=/tmp/bit
-RUN npm install -g @teambit/bvm \
-    && bvm upgrade --use-system-node \
-    && echo "export PATH=$PATH:${PATH}" >> .profile
-
-RUN bit config set analytics_reporting false \
-    && bit config set no_warnings false  \ 
-    && bit config set interactive false  \
-    && bit config set error_reporting true
-
 WORKDIR /home/node/bit-workspace
+
+# CMD ["bash"]
