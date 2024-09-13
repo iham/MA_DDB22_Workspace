@@ -1,5 +1,3 @@
-version: '3.8'
-
 name: test
 
 services:
@@ -7,7 +5,7 @@ services:
     image: iham/bit-vscode-workspace:latest
     restart: unless-stopped
     volumes:
-      - ../workspace:/bit-workspace
+      - ../bit-workspace:/bit-workspace
     ports: 
       - 8000:8080
 
@@ -15,9 +13,9 @@ services:
     image: iham/bit-server:latest
     restart: unless-stopped
     environment:
-      SCOPE_NAME: scope-1
+      - SCOPE_NAME=scope-1
     volumes:
-      - ../scope-1:/bit-scope
+      - scope-1:/bit-scope
     ports: 
       - 8100:3000
 
@@ -25,8 +23,22 @@ services:
     image: iham/bit-server:latest
     restart: unless-stopped
     environment:
-      SCOPE_NAME: scope-2
+      - SCOPE_NAME=scope-2
     volumes:
-      - ../scope-2:/bit-scope
+      - scope-2:/bit-scope
     ports: 
       - 8200:3000
+
+volumes:
+  scope-1:
+    driver: local
+    driver_opts:
+      type: none
+      device: "../scope-1"
+      o: bind
+  scope-2:
+    driver: local
+    driver_opts:
+      type: none
+      device: "../scope-2"
+      o: bind

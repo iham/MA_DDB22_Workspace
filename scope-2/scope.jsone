@@ -1,0 +1,10 @@
+{
+    "name": "bit-scope",
+    "remotes": {},
+    "version": "1.0.741",
+    "lanes": {
+        "current": "main",
+        "tracking": [],
+        "new": []
+    }
+}
