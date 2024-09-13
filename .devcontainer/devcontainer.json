@@ -10,8 +10,8 @@
     "forwardPorts": [3030],
 
     // Folder Structure
-    "workspaceMount": "source=${localWorkspaceFolder}/bit-workspace,target=/home/node/bit-workspace,type=bind",
-    "workspaceFolder": "/home/node/bit-workspace"
+    "workspaceMount": "source=${localWorkspaceFolder}/bit-workspace,target=/bit-workspace,type=bind",
+    "workspaceFolder": "/bit-workspace"
 
   }
   
