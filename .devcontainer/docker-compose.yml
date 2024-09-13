@@ -1,0 +1,32 @@
+version: '3.8'
+
+name: test
+
+services:
+  bit-workspace:
+    image: iham/bit-vscode-workspace:latest
+    restart: unless-stopped
+    volumes:
+      - ../workspace:/bit-workspace
+    ports: 
+      - 8000:8080
+
+  scope-1:
+    image: iham/bit-server:latest
+    restart: unless-stopped
+    environment:
+      SCOPE_NAME: scope-1
+    volumes:
+      - ../scope-1:/bit-scope
+    ports: 
+      - 8100:3000
+
+  scope-2:
+    image: iham/bit-server:latest
+    restart: unless-stopped
+    environment:
+      SCOPE_NAME: scope-2
+    volumes:
+      - ../scope-2:/bit-scope
+    ports: 
+      - 8200:3000

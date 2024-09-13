@@ -1,17 +1,5 @@
 {
-    "image": "iham/bit-vscode-workspace:latest",
-  
-    // "customizations": {
-    //   "vscode": {
-    //     "extensions": ["dbaeumer.vscode-eslint"]
-    //   }
-    // },
-  
-    "forwardPorts": [3030],
-
-    // Folder Structure
-    "workspaceMount": "source=${localWorkspaceFolder}/bit-workspace,target=/bit-workspace,type=bind",
-    "workspaceFolder": "/bit-workspace"
-
-  }
-  
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "bit-workspace",
+  "workspaceFolder": "/workspace"
+}
