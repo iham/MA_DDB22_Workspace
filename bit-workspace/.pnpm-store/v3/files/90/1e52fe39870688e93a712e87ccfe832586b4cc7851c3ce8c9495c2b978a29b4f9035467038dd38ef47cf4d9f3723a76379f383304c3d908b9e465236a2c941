@@ -1,0 +1,34 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VitestWorker = void 0;
+const worker_1 = require("@teambit/worker");
+const node_utils_esm_loader_1 = __importDefault(require("@teambit/node.utils.esm-loader"));
+const watch_reporter_1 = __importDefault(require("./watch-reporter"));
+const getVitest = async () => {
+    const path = require.resolve('vitest/node');
+    const vitest = await (0, node_utils_esm_loader_1.default)(path);
+    return vitest;
+};
+class VitestWorker {
+    onTestComplete(onTestComplete) {
+        this.onTestCompleteCb = onTestComplete;
+    }
+    async watch(viteConfig) {
+        const { startVitest } = await getVitest();
+        // eslint-disable-next-line no-param-reassign
+        viteConfig.test.reporters = [
+            new watch_reporter_1.default(async (files, errors) => {
+                if (this.onTestCompleteCb) {
+                    this.onTestCompleteCb(files, errors);
+                }
+            })
+        ];
+        await startVitest('test', undefined, undefined, viteConfig);
+    }
+}
+exports.VitestWorker = VitestWorker;
+(0, worker_1.expose)(new VitestWorker());
+//# sourceMappingURL=vitest.worker.js.map

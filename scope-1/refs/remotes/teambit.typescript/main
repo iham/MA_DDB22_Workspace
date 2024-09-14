@@ -1,0 +1,9 @@
+[
+  {
+    "id": {
+      "scope": "teambit.typescript",
+      "name": "typescript-compiler"
+    },
+    "head": "513dc90c51e1fb8fa583d3b8d8e54bfa0f9fcf51"
+  }
+]

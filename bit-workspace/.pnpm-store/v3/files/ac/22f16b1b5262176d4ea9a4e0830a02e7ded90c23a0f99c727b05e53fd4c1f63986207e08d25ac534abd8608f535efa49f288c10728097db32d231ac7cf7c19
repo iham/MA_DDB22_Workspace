@@ -1,0 +1,80 @@
+{
+  "__schema": "APISchema",
+  "location": {
+    "filePath": "index.ts",
+    "line": 1,
+    "character": 1
+  },
+  "module": {
+    "__schema": "ModuleSchema",
+    "location": {
+      "filePath": "index.ts",
+      "line": 1,
+      "character": 1
+    },
+    "exports": [
+      {
+        "__schema": "FunctionLikeSchema",
+        "location": {
+          "filePath": "is-esm-module.ts",
+          "line": 5,
+          "character": 1
+        },
+        "signature": "function isEsmModule(path: string): boolean",
+        "name": "isEsmModule",
+        "params": [
+          {
+            "__schema": "ParameterSchema",
+            "location": {
+              "filePath": "is-esm-module.ts",
+              "line": 5,
+              "character": 29
+            },
+            "name": "path",
+            "type": {
+              "__schema": "KeywordTypeSchema",
+              "location": {
+                "filePath": "is-esm-module.ts",
+                "line": 5,
+                "character": 35
+              },
+              "name": "string"
+            },
+            "isOptional": false,
+            "isSpread": false
+          }
+        ],
+        "returnType": {
+          "__schema": "InferenceTypeSchema",
+          "location": {
+            "filePath": "is-esm-module.ts",
+            "line": 5,
+            "character": 1
+          },
+          "type": "boolean"
+        },
+        "modifiers": [
+          "export"
+        ]
+      },
+      {
+        "__schema": "UnImplementedSchema",
+        "location": {
+          "filePath": "index.ts",
+          "line": 4,
+          "character": 16
+        },
+        "name": "esmLoader",
+        "type": "Identifier"
+      }
+    ],
+    "internals": []
+  },
+  "internals": [],
+  "componentId": {
+    "scope": "teambit.node",
+    "name": "utils/esm-loader",
+    "version": "8b32e72f90378cc343dd224cfd0a4230a9970bc1"
+  },
+  "taggedModuleExports": []
+}

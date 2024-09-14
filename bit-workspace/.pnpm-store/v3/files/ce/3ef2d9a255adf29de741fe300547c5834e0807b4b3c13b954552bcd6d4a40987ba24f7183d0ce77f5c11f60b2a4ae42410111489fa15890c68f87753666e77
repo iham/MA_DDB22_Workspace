@@ -1,0 +1,2 @@
+import React, { ButtonHTMLAttributes } from 'react';
+export declare function MockedComponentWithMeta(props: ButtonHTMLAttributes<HTMLButtonElement>): React.JSX.Element;

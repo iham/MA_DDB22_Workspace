@@ -1,0 +1,1990 @@
+{
+  "__schema": "APISchema",
+  "location": {
+    "filePath": "index.ts",
+    "line": 1,
+    "character": 1
+  },
+  "module": {
+    "__schema": "ModuleSchema",
+    "location": {
+      "filePath": "index.ts",
+      "line": 1,
+      "character": 1
+    },
+    "exports": [
+      {
+        "__schema": "ExportSchema",
+        "location": {
+          "filePath": "index.ts",
+          "line": 1,
+          "character": 10
+        },
+        "name": "VitestTester",
+        "exportNode": {
+          "__schema": "ClassSchema",
+          "location": {
+            "filePath": "vitest-tester.ts",
+            "line": 30,
+            "character": 1
+          },
+          "signature": "class VitestTester",
+          "name": "VitestTester",
+          "members": [
+            {
+              "__schema": "ConstructorSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 31,
+                "character": 3
+              },
+              "signature": "constructor VitestTester(id: string, configPath: string, vitestWorker: HarmonyWorker<VitestWorker>, logger: Logger, depResolver: DependencyResolverMain, opts?: VitestTesterOptions): VitestTester",
+              "name": "constructor",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 32,
+                    "character": 5
+                  },
+                  "name": "id",
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 32,
+                      "character": 18
+                    },
+                    "name": "string"
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 33,
+                    "character": 5
+                  },
+                  "name": "configPath",
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 33,
+                      "character": 26
+                    },
+                    "name": "string"
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 34,
+                    "character": 5
+                  },
+                  "name": "vitestWorker",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 34,
+                      "character": 27
+                    },
+                    "name": "HarmonyWorker",
+                    "componentId": {
+                      "scope": "teambit.harmony",
+                      "name": "worker"
+                    },
+                    "typeArgs": [
+                      {
+                        "__schema": "TypeRefSchema",
+                        "location": {
+                          "filePath": "vitest-tester.ts",
+                          "line": 34,
+                          "character": 41
+                        },
+                        "name": "VitestWorker",
+                        "internalFilePath": "vitest.worker.ts"
+                      }
+                    ]
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 35,
+                    "character": 5
+                  },
+                  "name": "logger",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 35,
+                      "character": 21
+                    },
+                    "name": "Logger",
+                    "componentId": {
+                      "scope": "teambit.harmony",
+                      "name": "logger"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 36,
+                    "character": 5
+                  },
+                  "name": "depResolver",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 36,
+                      "character": 26
+                    },
+                    "name": "DependencyResolverMain",
+                    "componentId": {
+                      "scope": "teambit.dependencies",
+                      "name": "dependency-resolver"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 37,
+                    "character": 5
+                  },
+                  "name": "opts",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 37,
+                      "character": 19
+                    },
+                    "name": "VitestTesterOptions"
+                  },
+                  "isOptional": true,
+                  "defaultValue": "{}",
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "ThisTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 30,
+                  "character": 1
+                },
+                "name": "VitestTester"
+              },
+              "modifiers": []
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 40,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.from(options: VitestOptions): EnvHandler<Tester>",
+              "name": "from",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 40,
+                    "character": 15
+                  },
+                  "name": "options",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 40,
+                      "character": 24
+                    },
+                    "name": "VitestOptions"
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 40,
+                  "character": 40
+                },
+                "name": "EnvHandler",
+                "componentId": {
+                  "scope": "teambit.envs",
+                  "name": "envs"
+                },
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 40,
+                      "character": 51
+                    },
+                    "name": "Tester",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  }
+                ]
+              },
+              "modifiers": [
+                "static"
+              ]
+            },
+            {
+              "__schema": "VariableLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 60,
+                "character": 3
+              },
+              "signature": "(property) VitestTester.displayName: string",
+              "name": "displayName",
+              "type": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 60,
+                  "character": 3
+                },
+                "type": "string"
+              },
+              "isOptional": true,
+              "defaultValue": "'Vitest'"
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 62,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.version(): string",
+              "name": "version",
+              "params": [],
+              "returnType": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 62,
+                  "character": 3
+                },
+                "type": "string"
+              },
+              "modifiers": []
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 66,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.displayConfig(): string",
+              "name": "displayConfig",
+              "params": [],
+              "returnType": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 66,
+                  "character": 3
+                },
+                "type": "string"
+              },
+              "modifiers": []
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 72,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.onTestRunComplete(callback: CallbackFn): Promise<void>",
+              "name": "onTestRunComplete",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 72,
+                    "character": 27
+                  },
+                  "name": "callback",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 72,
+                      "character": 37
+                    },
+                    "name": "CallbackFn",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 72,
+                  "character": 3
+                },
+                "type": "Promise<void>"
+              },
+              "modifiers": [
+                "async"
+              ]
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 76,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.test(context: TesterContext): Promise<Tests>",
+              "name": "test",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 76,
+                    "character": 14
+                  },
+                  "name": "context",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 76,
+                      "character": 23
+                    },
+                    "name": "TesterContext",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 76,
+                  "character": 39
+                },
+                "name": "Promise",
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 76,
+                      "character": 47
+                    },
+                    "name": "Tests",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  }
+                ]
+              },
+              "modifiers": [
+                "async"
+              ]
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 116,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.watch(context: TesterContext): Promise<Tests>",
+              "name": "watch",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 116,
+                    "character": 15
+                  },
+                  "name": "context",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 116,
+                      "character": 24
+                    },
+                    "name": "TesterContext",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 116,
+                  "character": 40
+                },
+                "name": "Promise",
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 116,
+                      "character": 48
+                    },
+                    "name": "Tests",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  }
+                ]
+              },
+              "modifiers": [
+                "async"
+              ]
+            }
+          ],
+          "extendsNodes": [],
+          "implementNodes": [
+            {
+              "__schema": "ExpressionWithTypeArgumentsSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 30,
+                "character": 38
+              },
+              "name": "implements Tester",
+              "typeArgs": [],
+              "expression": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 30,
+                  "character": 38
+                },
+                "name": "Tester",
+                "packageName": "/tmp/capsules-root/sign-capsules/2024-7-19/19ir51w/teambit.vite_vitest-tester@fd4615c888aaae46e8ca34de98393eaad87f2db5/vitest-tester.ts"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "__schema": "ExportSchema",
+        "location": {
+          "filePath": "index.ts",
+          "line": 2,
+          "character": 10
+        },
+        "name": "VitestTask",
+        "exportNode": {
+          "__schema": "VariableLikeSchema",
+          "location": {
+            "filePath": "vitest-task.ts",
+            "line": 12,
+            "character": 14
+          },
+          "signature": "const VitestTask: {\n    from: (options: VitestTaskOptions) => TaskHandler;\n}",
+          "name": "VitestTask",
+          "type": {
+            "__schema": "InferenceTypeSchema",
+            "location": {
+              "filePath": "vitest-task.ts",
+              "line": 12,
+              "character": 14
+            },
+            "type": "{\n    from: (options: VitestTaskOptions) => TaskHandler;\n}"
+          },
+          "isOptional": false,
+          "defaultValue": "{\n  from: (options: VitestTaskOptions): TaskHandler => {\n    const name = options.name || 'VitestTest';\n    const description = options.description || 'testing components using Vitest';\n    return TesterTask.from({\n      ...options,\n      name,\n      description,\n      tester: VitestTester.from(options),\n    });\n  },\n}"
+        }
+      },
+      {
+        "__schema": "ExportSchema",
+        "location": {
+          "filePath": "index.ts",
+          "line": 2,
+          "character": 22
+        },
+        "name": "VitestTaskOptions",
+        "exportNode": {
+          "__schema": "TypeSchema",
+          "location": {
+            "filePath": "vitest-task.ts",
+            "line": 6,
+            "character": 1
+          },
+          "signature": "type VitestTaskOptions = {\n    name?: string | undefined;\n    config: string;\n    vitest?: string | undefined;\n} & VitestTesterOptions & Pick<TesterTaskOptions, \"description\">",
+          "name": "VitestTaskOptions",
+          "type": {
+            "__schema": "TypeIntersectionSchema",
+            "location": {
+              "filePath": "vitest-task.ts",
+              "line": 6,
+              "character": 33
+            },
+            "types": [
+              {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-task.ts",
+                  "line": 6,
+                  "character": 33
+                },
+                "name": "VitestOptions"
+              },
+              {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-task.ts",
+                  "line": 7,
+                  "character": 3
+                },
+                "name": "Pick",
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-task.ts",
+                      "line": 7,
+                      "character": 8
+                    },
+                    "name": "TesterTaskOptions",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester-task",
+                      "version": "1.0.13"
+                    }
+                  },
+                  {
+                    "__schema": "LiteralTypeSchema",
+                    "location": {
+                      "filePath": "vitest-task.ts",
+                      "line": 7,
+                      "character": 27
+                    },
+                    "name": "'description'"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "__schema": "ExportSchema",
+        "location": {
+          "filePath": "index.ts",
+          "line": 3,
+          "character": 10
+        },
+        "name": "VitestOptions",
+        "exportNode": {
+          "__schema": "TypeSchema",
+          "location": {
+            "filePath": "vitest-options.ts",
+            "line": 23,
+            "character": 1
+          },
+          "signature": "type VitestOptions = {\n    name?: string | undefined;\n    config: string;\n    vitest?: string | undefined;\n} & VitestTesterOptions",
+          "name": "VitestOptions",
+          "type": {
+            "__schema": "TypeIntersectionSchema",
+            "location": {
+              "filePath": "vitest-options.ts",
+              "line": 23,
+              "character": 29
+            },
+            "types": [
+              {
+                "__schema": "TypeLiteralSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 23,
+                  "character": 29
+                },
+                "members": [
+                  {
+                    "__schema": "VariableLikeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 27,
+                      "character": 3
+                    },
+                    "doc": {
+                      "__schema": "DocSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 24,
+                        "character": 3
+                      },
+                      "raw": "/**\n   * name of the tester. default to \"vitest-tester\".\n   */",
+                      "comment": "name of the tester. default to \"vitest-tester\".",
+                      "tags": []
+                    },
+                    "signature": "(property) name?: string | undefined",
+                    "name": "name",
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 27,
+                        "character": 10
+                      },
+                      "name": "string"
+                    },
+                    "isOptional": true
+                  },
+                  {
+                    "__schema": "VariableLikeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 32,
+                      "character": 3
+                    },
+                    "doc": {
+                      "__schema": "DocSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 29,
+                        "character": 3
+                      },
+                      "raw": "/**\n   * path to vitest config.\n   */",
+                      "comment": "path to vitest config.",
+                      "tags": []
+                    },
+                    "signature": "(property) config: string",
+                    "name": "config",
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 32,
+                        "character": 11
+                      },
+                      "name": "string"
+                    },
+                    "isOptional": false
+                  },
+                  {
+                    "__schema": "VariableLikeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 37,
+                      "character": 3
+                    },
+                    "doc": {
+                      "__schema": "DocSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 34,
+                        "character": 3
+                      },
+                      "raw": "/**\n   * path to the vitest module path to require.\n   */",
+                      "comment": "path to the vitest module path to require.",
+                      "tags": []
+                    },
+                    "signature": "(property) vitest?: string | undefined",
+                    "name": "vitest",
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 37,
+                        "character": 12
+                      },
+                      "name": "string"
+                    },
+                    "isOptional": true
+                  }
+                ]
+              },
+              {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 38,
+                  "character": 5
+                },
+                "name": "VitestTesterOptions"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "__schema": "ExportSchema",
+        "location": {
+          "filePath": "index.ts",
+          "line": 3,
+          "character": 25
+        },
+        "name": "VitestTesterOptions",
+        "exportNode": {
+          "__schema": "TypeSchema",
+          "location": {
+            "filePath": "vitest-options.ts",
+            "line": 4,
+            "character": 1
+          },
+          "signature": "type VitestTesterOptions = {\n    patterns?: string[] | undefined;\n    roots?: string[] | undefined;\n    resolveSpecPaths?: ((component: Component, context: TesterContext) => string[]) | undefined;\n}",
+          "name": "VitestTesterOptions",
+          "type": {
+            "__schema": "TypeLiteralSchema",
+            "location": {
+              "filePath": "vitest-options.ts",
+              "line": 4,
+              "character": 35
+            },
+            "members": [
+              {
+                "__schema": "VariableLikeSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 8,
+                  "character": 3
+                },
+                "doc": {
+                  "__schema": "DocSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 5,
+                    "character": 3
+                  },
+                  "raw": "/**\n   * array of patterns to test. (override the patterns provided by the context)\n   */",
+                  "comment": "array of patterns to test. (override the patterns provided by the context)",
+                  "tags": []
+                },
+                "signature": "(property) patterns?: string[] | undefined",
+                "name": "patterns",
+                "type": {
+                  "__schema": "TypeArraySchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 8,
+                    "character": 14
+                  },
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 8,
+                      "character": 14
+                    },
+                    "name": "string"
+                  }
+                },
+                "isOptional": true
+              },
+              {
+                "__schema": "VariableLikeSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 13,
+                  "character": 3
+                },
+                "doc": {
+                  "__schema": "DocSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 10,
+                    "character": 3
+                  },
+                  "raw": "/**\n   * add more root paths to look for tests.\n   */",
+                  "comment": "add more root paths to look for tests.",
+                  "tags": []
+                },
+                "signature": "(property) roots?: string[] | undefined",
+                "name": "roots",
+                "type": {
+                  "__schema": "TypeArraySchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 13,
+                    "character": 11
+                  },
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 13,
+                      "character": 11
+                    },
+                    "name": "string"
+                  }
+                },
+                "isOptional": true
+              },
+              {
+                "__schema": "VariableLikeSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 20,
+                  "character": 3
+                },
+                "doc": {
+                  "__schema": "DocSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 15,
+                    "character": 3
+                  },
+                  "raw": "/**\n   * A function that knows to resolve the paths of the spec files.\n   * This usually used when you want only subset of your spec files to be used\n   * (usually when you use multi tester with different specs files for each tester instance).\n   */",
+                  "comment": "A function that knows to resolve the paths of the spec files.\nThis usually used when you want only subset of your spec files to be used\n(usually when you use multi tester with different specs files for each tester instance).",
+                  "tags": []
+                },
+                "signature": "(property) resolveSpecPaths?: ((component: Component, context: TesterContext) => string[]) | undefined",
+                "name": "resolveSpecPaths",
+                "type": {
+                  "__schema": "FunctionLikeSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 20,
+                    "character": 22
+                  },
+                  "signature": "(component: \u001b[2m(component: teambit.component/component)\u001b[22m Component, context: \u001b[2m(component: teambit.defender/tester)\u001b[22m TesterContext): string[]",
+                  "name": "",
+                  "params": [
+                    {
+                      "__schema": "ParameterSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 20,
+                        "character": 23
+                      },
+                      "name": "component",
+                      "type": {
+                        "__schema": "TypeRefSchema",
+                        "location": {
+                          "filePath": "vitest-options.ts",
+                          "line": 20,
+                          "character": 34
+                        },
+                        "name": "Component",
+                        "componentId": {
+                          "scope": "teambit.component",
+                          "name": "component"
+                        }
+                      },
+                      "isOptional": false,
+                      "isSpread": false
+                    },
+                    {
+                      "__schema": "ParameterSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 20,
+                        "character": 45
+                      },
+                      "name": "context",
+                      "type": {
+                        "__schema": "TypeRefSchema",
+                        "location": {
+                          "filePath": "vitest-options.ts",
+                          "line": 20,
+                          "character": 54
+                        },
+                        "name": "TesterContext",
+                        "componentId": {
+                          "scope": "teambit.defender",
+                          "name": "tester"
+                        }
+                      },
+                      "isOptional": false,
+                      "isSpread": false
+                    }
+                  ],
+                  "returnType": {
+                    "__schema": "TypeArraySchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 20,
+                      "character": 72
+                    },
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 20,
+                        "character": 72
+                      },
+                      "name": "string"
+                    }
+                  },
+                  "modifiers": []
+                },
+                "isOptional": true
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "internals": []
+  },
+  "internals": [
+    {
+      "__schema": "ModuleSchema",
+      "location": {
+        "filePath": "vitest-tester.ts",
+        "line": 2,
+        "character": 1
+      },
+      "exports": [
+        {
+          "__schema": "ClassSchema",
+          "location": {
+            "filePath": "vitest-tester.ts",
+            "line": 30,
+            "character": 1
+          },
+          "signature": "class VitestTester",
+          "name": "VitestTester",
+          "members": [
+            {
+              "__schema": "ConstructorSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 31,
+                "character": 3
+              },
+              "signature": "constructor VitestTester(id: string, configPath: string, vitestWorker: HarmonyWorker<VitestWorker>, logger: Logger, depResolver: DependencyResolverMain, opts?: VitestTesterOptions): VitestTester",
+              "name": "constructor",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 32,
+                    "character": 5
+                  },
+                  "name": "id",
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 32,
+                      "character": 18
+                    },
+                    "name": "string"
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 33,
+                    "character": 5
+                  },
+                  "name": "configPath",
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 33,
+                      "character": 26
+                    },
+                    "name": "string"
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 34,
+                    "character": 5
+                  },
+                  "name": "vitestWorker",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 34,
+                      "character": 27
+                    },
+                    "name": "HarmonyWorker",
+                    "componentId": {
+                      "scope": "teambit.harmony",
+                      "name": "worker"
+                    },
+                    "typeArgs": [
+                      {
+                        "__schema": "TypeRefSchema",
+                        "location": {
+                          "filePath": "vitest-tester.ts",
+                          "line": 34,
+                          "character": 41
+                        },
+                        "name": "VitestWorker",
+                        "internalFilePath": "vitest.worker.ts"
+                      }
+                    ]
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 35,
+                    "character": 5
+                  },
+                  "name": "logger",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 35,
+                      "character": 21
+                    },
+                    "name": "Logger",
+                    "componentId": {
+                      "scope": "teambit.harmony",
+                      "name": "logger"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 36,
+                    "character": 5
+                  },
+                  "name": "depResolver",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 36,
+                      "character": 26
+                    },
+                    "name": "DependencyResolverMain",
+                    "componentId": {
+                      "scope": "teambit.dependencies",
+                      "name": "dependency-resolver"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                },
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 37,
+                    "character": 5
+                  },
+                  "name": "opts",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 37,
+                      "character": 19
+                    },
+                    "name": "VitestTesterOptions"
+                  },
+                  "isOptional": true,
+                  "defaultValue": "{}",
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "ThisTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 30,
+                  "character": 1
+                },
+                "name": "VitestTester"
+              },
+              "modifiers": []
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 40,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.from(options: VitestOptions): EnvHandler<Tester>",
+              "name": "from",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 40,
+                    "character": 15
+                  },
+                  "name": "options",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 40,
+                      "character": 24
+                    },
+                    "name": "VitestOptions"
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 40,
+                  "character": 40
+                },
+                "name": "EnvHandler",
+                "componentId": {
+                  "scope": "teambit.envs",
+                  "name": "envs"
+                },
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 40,
+                      "character": 51
+                    },
+                    "name": "Tester",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  }
+                ]
+              },
+              "modifiers": [
+                "static"
+              ]
+            },
+            {
+              "__schema": "VariableLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 60,
+                "character": 3
+              },
+              "signature": "(property) VitestTester.displayName: string",
+              "name": "displayName",
+              "type": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 60,
+                  "character": 3
+                },
+                "type": "string"
+              },
+              "isOptional": true,
+              "defaultValue": "'Vitest'"
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 62,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.version(): string",
+              "name": "version",
+              "params": [],
+              "returnType": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 62,
+                  "character": 3
+                },
+                "type": "string"
+              },
+              "modifiers": []
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 66,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.displayConfig(): string",
+              "name": "displayConfig",
+              "params": [],
+              "returnType": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 66,
+                  "character": 3
+                },
+                "type": "string"
+              },
+              "modifiers": []
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 72,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.onTestRunComplete(callback: CallbackFn): Promise<void>",
+              "name": "onTestRunComplete",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 72,
+                    "character": 27
+                  },
+                  "name": "callback",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 72,
+                      "character": 37
+                    },
+                    "name": "CallbackFn",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 72,
+                  "character": 3
+                },
+                "type": "Promise<void>"
+              },
+              "modifiers": [
+                "async"
+              ]
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 76,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.test(context: TesterContext): Promise<Tests>",
+              "name": "test",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 76,
+                    "character": 14
+                  },
+                  "name": "context",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 76,
+                      "character": 23
+                    },
+                    "name": "TesterContext",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 76,
+                  "character": 39
+                },
+                "name": "Promise",
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 76,
+                      "character": 47
+                    },
+                    "name": "Tests",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  }
+                ]
+              },
+              "modifiers": [
+                "async"
+              ]
+            },
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 116,
+                "character": 3
+              },
+              "signature": "(method) VitestTester.watch(context: TesterContext): Promise<Tests>",
+              "name": "watch",
+              "params": [
+                {
+                  "__schema": "ParameterSchema",
+                  "location": {
+                    "filePath": "vitest-tester.ts",
+                    "line": 116,
+                    "character": 15
+                  },
+                  "name": "context",
+                  "type": {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 116,
+                      "character": 24
+                    },
+                    "name": "TesterContext",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  },
+                  "isOptional": false,
+                  "isSpread": false
+                }
+              ],
+              "returnType": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 116,
+                  "character": 40
+                },
+                "name": "Promise",
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-tester.ts",
+                      "line": 116,
+                      "character": 48
+                    },
+                    "name": "Tests",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester"
+                    }
+                  }
+                ]
+              },
+              "modifiers": [
+                "async"
+              ]
+            }
+          ],
+          "extendsNodes": [],
+          "implementNodes": [
+            {
+              "__schema": "ExpressionWithTypeArgumentsSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 30,
+                "character": 38
+              },
+              "name": "implements Tester",
+              "typeArgs": [],
+              "expression": {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 30,
+                  "character": 38
+                },
+                "name": "Tester",
+                "packageName": "/tmp/capsules-root/sign-capsules/2024-7-19/19ir51w/teambit.vite_vitest-tester@fd4615c888aaae46e8ca34de98393eaad87f2db5/vitest-tester.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "internals": [
+        {
+          "__schema": "UnImplementedSchema",
+          "location": {
+            "filePath": "vitest-tester.ts",
+            "line": 21,
+            "character": 1
+          },
+          "name": "require.resolve('jsdom');",
+          "type": "ExpressionStatement"
+        },
+        {
+          "__schema": "UnImplementedSchema",
+          "location": {
+            "filePath": "vitest-tester.ts",
+            "line": 22,
+            "character": 1
+          },
+          "name": "require.resolve('@vitest/coverage-v8');",
+          "type": "ExpressionStatement"
+        },
+        {
+          "__schema": "ModuleSchema",
+          "location": {
+            "filePath": "vitest-tester.ts",
+            "line": 24,
+            "character": 1
+          },
+          "exports": [
+            {
+              "__schema": "FunctionLikeSchema",
+              "location": {
+                "filePath": "vitest-tester.ts",
+                "line": 24,
+                "character": 7
+              },
+              "signature": "function(): Promise<any>",
+              "name": "getVitest",
+              "params": [],
+              "returnType": {
+                "__schema": "InferenceTypeSchema",
+                "location": {
+                  "filePath": "vitest-tester.ts",
+                  "line": 24,
+                  "character": 19
+                },
+                "type": "Promise<any>"
+              },
+              "modifiers": []
+            }
+          ],
+          "internals": []
+        }
+      ]
+    },
+    {
+      "__schema": "ModuleSchema",
+      "location": {
+        "filePath": "vitest-task.ts",
+        "line": 1,
+        "character": 1
+      },
+      "exports": [
+        {
+          "__schema": "TypeSchema",
+          "location": {
+            "filePath": "vitest-task.ts",
+            "line": 6,
+            "character": 1
+          },
+          "signature": "type VitestTaskOptions = {\n    name?: string | undefined;\n    config: string;\n    vitest?: string | undefined;\n} & VitestTesterOptions & Pick<TesterTaskOptions, \"description\">",
+          "name": "VitestTaskOptions",
+          "type": {
+            "__schema": "TypeIntersectionSchema",
+            "location": {
+              "filePath": "vitest-task.ts",
+              "line": 6,
+              "character": 33
+            },
+            "types": [
+              {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-task.ts",
+                  "line": 6,
+                  "character": 33
+                },
+                "name": "VitestOptions"
+              },
+              {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-task.ts",
+                  "line": 7,
+                  "character": 3
+                },
+                "name": "Pick",
+                "typeArgs": [
+                  {
+                    "__schema": "TypeRefSchema",
+                    "location": {
+                      "filePath": "vitest-task.ts",
+                      "line": 7,
+                      "character": 8
+                    },
+                    "name": "TesterTaskOptions",
+                    "componentId": {
+                      "scope": "teambit.defender",
+                      "name": "tester-task",
+                      "version": "1.0.13"
+                    }
+                  },
+                  {
+                    "__schema": "LiteralTypeSchema",
+                    "location": {
+                      "filePath": "vitest-task.ts",
+                      "line": 7,
+                      "character": 27
+                    },
+                    "name": "'description'"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "__schema": "VariableLikeSchema",
+          "location": {
+            "filePath": "vitest-task.ts",
+            "line": 12,
+            "character": 14
+          },
+          "signature": "const VitestTask: {\n    from: (options: VitestTaskOptions) => TaskHandler;\n}",
+          "name": "VitestTask",
+          "type": {
+            "__schema": "InferenceTypeSchema",
+            "location": {
+              "filePath": "vitest-task.ts",
+              "line": 12,
+              "character": 14
+            },
+            "type": "{\n    from: (options: VitestTaskOptions) => TaskHandler;\n}"
+          },
+          "isOptional": false,
+          "defaultValue": "{\n  from: (options: VitestTaskOptions): TaskHandler => {\n    const name = options.name || 'VitestTest';\n    const description = options.description || 'testing components using Vitest';\n    return TesterTask.from({\n      ...options,\n      name,\n      description,\n      tester: VitestTester.from(options),\n    });\n  },\n}"
+        }
+      ],
+      "internals": []
+    },
+    {
+      "__schema": "ModuleSchema",
+      "location": {
+        "filePath": "vitest-options.ts",
+        "line": 1,
+        "character": 1
+      },
+      "exports": [
+        {
+          "__schema": "TypeSchema",
+          "location": {
+            "filePath": "vitest-options.ts",
+            "line": 4,
+            "character": 1
+          },
+          "signature": "type VitestTesterOptions = {\n    patterns?: string[] | undefined;\n    roots?: string[] | undefined;\n    resolveSpecPaths?: ((component: Component, context: TesterContext) => string[]) | undefined;\n}",
+          "name": "VitestTesterOptions",
+          "type": {
+            "__schema": "TypeLiteralSchema",
+            "location": {
+              "filePath": "vitest-options.ts",
+              "line": 4,
+              "character": 35
+            },
+            "members": [
+              {
+                "__schema": "VariableLikeSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 8,
+                  "character": 3
+                },
+                "doc": {
+                  "__schema": "DocSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 5,
+                    "character": 3
+                  },
+                  "raw": "/**\n   * array of patterns to test. (override the patterns provided by the context)\n   */",
+                  "comment": "array of patterns to test. (override the patterns provided by the context)",
+                  "tags": []
+                },
+                "signature": "(property) patterns?: string[] | undefined",
+                "name": "patterns",
+                "type": {
+                  "__schema": "TypeArraySchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 8,
+                    "character": 14
+                  },
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 8,
+                      "character": 14
+                    },
+                    "name": "string"
+                  }
+                },
+                "isOptional": true
+              },
+              {
+                "__schema": "VariableLikeSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 13,
+                  "character": 3
+                },
+                "doc": {
+                  "__schema": "DocSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 10,
+                    "character": 3
+                  },
+                  "raw": "/**\n   * add more root paths to look for tests.\n   */",
+                  "comment": "add more root paths to look for tests.",
+                  "tags": []
+                },
+                "signature": "(property) roots?: string[] | undefined",
+                "name": "roots",
+                "type": {
+                  "__schema": "TypeArraySchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 13,
+                    "character": 11
+                  },
+                  "type": {
+                    "__schema": "KeywordTypeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 13,
+                      "character": 11
+                    },
+                    "name": "string"
+                  }
+                },
+                "isOptional": true
+              },
+              {
+                "__schema": "VariableLikeSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 20,
+                  "character": 3
+                },
+                "doc": {
+                  "__schema": "DocSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 15,
+                    "character": 3
+                  },
+                  "raw": "/**\n   * A function that knows to resolve the paths of the spec files.\n   * This usually used when you want only subset of your spec files to be used\n   * (usually when you use multi tester with different specs files for each tester instance).\n   */",
+                  "comment": "A function that knows to resolve the paths of the spec files.\nThis usually used when you want only subset of your spec files to be used\n(usually when you use multi tester with different specs files for each tester instance).",
+                  "tags": []
+                },
+                "signature": "(property) resolveSpecPaths?: ((component: Component, context: TesterContext) => string[]) | undefined",
+                "name": "resolveSpecPaths",
+                "type": {
+                  "__schema": "FunctionLikeSchema",
+                  "location": {
+                    "filePath": "vitest-options.ts",
+                    "line": 20,
+                    "character": 22
+                  },
+                  "signature": "(component: \u001b[2m(component: teambit.component/component)\u001b[22m Component, context: \u001b[2m(component: teambit.defender/tester)\u001b[22m TesterContext): string[]",
+                  "name": "",
+                  "params": [
+                    {
+                      "__schema": "ParameterSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 20,
+                        "character": 23
+                      },
+                      "name": "component",
+                      "type": {
+                        "__schema": "TypeRefSchema",
+                        "location": {
+                          "filePath": "vitest-options.ts",
+                          "line": 20,
+                          "character": 34
+                        },
+                        "name": "Component",
+                        "componentId": {
+                          "scope": "teambit.component",
+                          "name": "component"
+                        }
+                      },
+                      "isOptional": false,
+                      "isSpread": false
+                    },
+                    {
+                      "__schema": "ParameterSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 20,
+                        "character": 45
+                      },
+                      "name": "context",
+                      "type": {
+                        "__schema": "TypeRefSchema",
+                        "location": {
+                          "filePath": "vitest-options.ts",
+                          "line": 20,
+                          "character": 54
+                        },
+                        "name": "TesterContext",
+                        "componentId": {
+                          "scope": "teambit.defender",
+                          "name": "tester"
+                        }
+                      },
+                      "isOptional": false,
+                      "isSpread": false
+                    }
+                  ],
+                  "returnType": {
+                    "__schema": "TypeArraySchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 20,
+                      "character": 72
+                    },
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 20,
+                        "character": 72
+                      },
+                      "name": "string"
+                    }
+                  },
+                  "modifiers": []
+                },
+                "isOptional": true
+              }
+            ]
+          }
+        },
+        {
+          "__schema": "TypeSchema",
+          "location": {
+            "filePath": "vitest-options.ts",
+            "line": 23,
+            "character": 1
+          },
+          "signature": "type VitestOptions = {\n    name?: string | undefined;\n    config: string;\n    vitest?: string | undefined;\n} & VitestTesterOptions",
+          "name": "VitestOptions",
+          "type": {
+            "__schema": "TypeIntersectionSchema",
+            "location": {
+              "filePath": "vitest-options.ts",
+              "line": 23,
+              "character": 29
+            },
+            "types": [
+              {
+                "__schema": "TypeLiteralSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 23,
+                  "character": 29
+                },
+                "members": [
+                  {
+                    "__schema": "VariableLikeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 27,
+                      "character": 3
+                    },
+                    "doc": {
+                      "__schema": "DocSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 24,
+                        "character": 3
+                      },
+                      "raw": "/**\n   * name of the tester. default to \"vitest-tester\".\n   */",
+                      "comment": "name of the tester. default to \"vitest-tester\".",
+                      "tags": []
+                    },
+                    "signature": "(property) name?: string | undefined",
+                    "name": "name",
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 27,
+                        "character": 10
+                      },
+                      "name": "string"
+                    },
+                    "isOptional": true
+                  },
+                  {
+                    "__schema": "VariableLikeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 32,
+                      "character": 3
+                    },
+                    "doc": {
+                      "__schema": "DocSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 29,
+                        "character": 3
+                      },
+                      "raw": "/**\n   * path to vitest config.\n   */",
+                      "comment": "path to vitest config.",
+                      "tags": []
+                    },
+                    "signature": "(property) config: string",
+                    "name": "config",
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 32,
+                        "character": 11
+                      },
+                      "name": "string"
+                    },
+                    "isOptional": false
+                  },
+                  {
+                    "__schema": "VariableLikeSchema",
+                    "location": {
+                      "filePath": "vitest-options.ts",
+                      "line": 37,
+                      "character": 3
+                    },
+                    "doc": {
+                      "__schema": "DocSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 34,
+                        "character": 3
+                      },
+                      "raw": "/**\n   * path to the vitest module path to require.\n   */",
+                      "comment": "path to the vitest module path to require.",
+                      "tags": []
+                    },
+                    "signature": "(property) vitest?: string | undefined",
+                    "name": "vitest",
+                    "type": {
+                      "__schema": "KeywordTypeSchema",
+                      "location": {
+                        "filePath": "vitest-options.ts",
+                        "line": 37,
+                        "character": 12
+                      },
+                      "name": "string"
+                    },
+                    "isOptional": true
+                  }
+                ]
+              },
+              {
+                "__schema": "TypeRefSchema",
+                "location": {
+                  "filePath": "vitest-options.ts",
+                  "line": 38,
+                  "character": 5
+                },
+                "name": "VitestTesterOptions"
+              }
+            ]
+          }
+        }
+      ],
+      "internals": []
+    }
+  ],
+  "componentId": {
+    "scope": "teambit.vite",
+    "name": "vitest-tester",
+    "version": "fd4615c888aaae46e8ca34de98393eaad87f2db5"
+  },
+  "taggedModuleExports": []
+}

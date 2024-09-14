@@ -1,0 +1,51 @@
+[
+  {
+    "id": {
+      "scope": "teambit.mdx",
+      "name": "ui/mdx-layout"
+    },
+    "head": "48cf147e318d5e1bba8d169300a60bab791cf54d"
+  },
+  {
+    "id": {
+      "scope": "teambit.mdx",
+      "name": "ui/docs/link"
+    },
+    "head": "2111030d8b2c000b5bb2885bb0d223e9f724fec2"
+  },
+  {
+    "id": {
+      "scope": "teambit.mdx",
+      "name": "ui/docs/snippet"
+    },
+    "head": "d62f1c0d678c8a38db4e1bc31ecf6cc48aef5242"
+  },
+  {
+    "id": {
+      "scope": "teambit.mdx",
+      "name": "ui/mdx-scope-context"
+    },
+    "head": "b5ebce0ac69289dfa0429730602604a73d4ca282"
+  },
+  {
+    "id": {
+      "scope": "teambit.mdx",
+      "name": "modules/mdx-loader"
+    },
+    "head": "e578707e6cccd2cdcd708cec61f3858449cbdda4"
+  },
+  {
+    "id": {
+      "scope": "teambit.mdx",
+      "name": "modules/mdx-compiler"
+    },
+    "head": "07270f36a9018fb01544e82f020634f56af6086b"
+  },
+  {
+    "id": {
+      "scope": "teambit.mdx",
+      "name": "compilers/mdx-transpiler"
+    },
+    "head": "736711ebeee0d4d7b6ea96d1d675b15953b86766"
+  }
+]

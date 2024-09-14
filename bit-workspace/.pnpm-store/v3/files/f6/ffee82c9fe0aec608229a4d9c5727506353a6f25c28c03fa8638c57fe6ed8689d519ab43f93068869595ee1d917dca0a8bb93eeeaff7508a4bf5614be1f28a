@@ -1,0 +1,7 @@
+;
+import * as overview_0 from '/Users/davidfirst/Library/Caches/Bit/capsules/641258179/teambit.docs_docs-template@1.0.7/dist/docs-template.docs.mdx';
+
+export const compositions = [];
+export const overview = [overview_0];
+
+export const compositions_metadata = {"compositions":[]};

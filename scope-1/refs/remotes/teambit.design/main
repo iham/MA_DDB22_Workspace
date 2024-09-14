@@ -1,0 +1,212 @@
+[
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/layouts/sections/left-right"
+    },
+    "head": "87e59deefff49d3d53642f78cb8e355a0c41686e"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "themes/theme-toggler"
+    },
+    "head": "1ea9e8449807bde52221192f206dab58784c6b75"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "themes/base-theme"
+    },
+    "head": "e078776dd93a611942733c905d3fb1e11f1055fd"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "theme/icons-font"
+    },
+    "head": "c7ebb6a592a7814ada477067e87cee5c1c9621c9"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/tooltip"
+    },
+    "head": "7b98f3e887e8edb7ab6e6bdcd9d1f9e064a877e1"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/cards/bubble-card"
+    },
+    "head": "7bb6f4c1d0bacd347177bf2bf4c3890ab13482c0"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/cards/card"
+    },
+    "head": "a389bf27722f25b7c170c193b7923f20302677a2"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "themes/dark-theme"
+    },
+    "head": "a0e3d5abb5cbed3704f01163f96df5f3bc5a209e"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "themes/color-schema"
+    },
+    "head": "938ed2ea8257150e10ed69eb4e8c5542e8513800"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "themes/light-theme"
+    },
+    "head": "4f4964c3777eb7ac8a12d4453c26e65757f1524f"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "embeds/figma"
+    },
+    "head": "2a771ce74f16bb17365e95f4ca3566e1512da1f4"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "envs/react"
+    },
+    "head": "317b5302c4ab75038d668a6de60c1d54c21b7b78"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "theme/theme-context"
+    },
+    "head": "de6799071fbe39df40cbe4e9ec2f3e85c1432170"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/buttons/button"
+    },
+    "head": "696ba1612d290043eb8598eecc2470725306f698"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/heading"
+    },
+    "head": "48d0338e21b93cbbdb19e1423414e64a1c0388b1"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/content/caption"
+    },
+    "head": "d001c4e0ce649881eaa283f69badefcd9eb3e66f"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/styles/ellipsis"
+    },
+    "head": "abff0926752387005509b44bfb596f26bd5422a6"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "elements/icon"
+    },
+    "head": "8aba5313006593cdee28e82cf3b271089c301677"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/content/heading"
+    },
+    "head": "a86c2717de9ac2dee14a84a7a7810ff1e6159ba1"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/navigation/link"
+    },
+    "head": "bde5b9aca894f956c12c6e5fb9b13b556e66e629"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/content/subtitle"
+    },
+    "head": "4238c7b96c8e8eba2eb6c56a7aa8d0d949b46038"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/icon-button"
+    },
+    "head": "afb7a70a0d88cb6b0683be4bd331eafdf4ea4a42"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/pages/not-found"
+    },
+    "head": "eb7280b1fcd373bd47d841e7e509b31b265e29d4"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/error-page"
+    },
+    "head": "29142ee21e91460cf7093c439812cad4716f5a82"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/pages/server-error"
+    },
+    "head": "cd37f10370bfa1ee2b9f53421e0425656d682ef8"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "content/collapsible-content"
+    },
+    "head": "f1f636ccea3385c18d151fac34c89fc356609cc2"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "typography/text"
+    },
+    "head": "151f766636cc17ac9412080fd82e5501be3796e1"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/separator"
+    },
+    "head": "479bd6cd1c804d05a4c3170e502ef4dffa59826f"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "responsive/breakpoints"
+    },
+    "head": "3268ed0eec489410b506bd9f56eb6a21afbe43e0"
+  },
+  {
+    "id": {
+      "scope": "teambit.design",
+      "name": "ui/input/toggle"
+    },
+    "head": "ec7d58b24dda545dfcb38edf4f87ad3f2fe10140"
+  }
+]

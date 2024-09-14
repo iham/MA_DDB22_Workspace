@@ -1,0 +1,20 @@
+declare let _extends: string[];
+export { _extends as extends };
+export declare let plugins: string[];
+export declare let settings: {
+    'mdx/code-blocks': boolean;
+    jest: {
+        version: number;
+    };
+    react: {
+        version: string;
+    };
+};
+export declare let env: {
+    'jest/globals': boolean;
+    browser: boolean;
+    mocha: boolean;
+    node: boolean;
+    es6: boolean;
+};
+export declare let overrides: any[];

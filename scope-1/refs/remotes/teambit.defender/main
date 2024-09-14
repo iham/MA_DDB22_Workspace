@@ -1,0 +1,93 @@
+[
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "eslint-linter"
+    },
+    "head": "26be591bec9c8eedf895ae5ce35a9e7a3f0e82cd"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "linter-task"
+    },
+    "head": "f01d5758532673a18d27e667402ae4575a529b87"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "fs/global-bit-temp-dir"
+    },
+    "head": "5c7d557cb41db7c4a04c779244e0df23ce91e956"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "docs/eslint-docs"
+    },
+    "head": "34faa8981088f0ee20e8c88fd0be8af28d07cd28"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "jest-tester"
+    },
+    "head": "77200ac59092233e0112f95b4e2629860dc4774d"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "tester-task"
+    },
+    "head": "b782ee38f696f3d2cb085c067886827ca06f12b8"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "tests-results"
+    },
+    "head": "5337a8c6507d15bef11faed6529de30e9f4361cc"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "prettier-formatter"
+    },
+    "head": "c51aae8d96f16af58af2e909408eca0d9931f474"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "docs/using-linters"
+    },
+    "head": "8bbd553d856a55ba0bed0412b5d5b2f5fc33f6e5"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "docs/jest-docs"
+    },
+    "head": "58491a3fa4635c4c173f18e75b3834b688d59d9a"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "docs/using-testers"
+    },
+    "head": "e4423311c02cc5a8492e9449be5ebd458c4ca8fc"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "docs/prettier-docs"
+    },
+    "head": "a591d6f6da154d88e6298ddd2cf2cb6c251af700"
+  },
+  {
+    "id": {
+      "scope": "teambit.defender",
+      "name": "docs/using-formatters"
+    },
+    "head": "7df27df862e7a2053844f95405a57d0d10a3a936"
+  }
+]

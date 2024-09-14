@@ -1,0 +1,23 @@
+[
+  {
+    "id": {
+      "scope": "teambit.harmony",
+      "name": "bit-error"
+    },
+    "head": "ad7dfcf2c03a021f99f61ef56acae222e0d8797e"
+  },
+  {
+    "id": {
+      "scope": "teambit.harmony",
+      "name": "harmony"
+    },
+    "head": "7cb79548ef537cf7143b4ed91f172eed599d94ec"
+  },
+  {
+    "id": {
+      "scope": "teambit.harmony",
+      "name": "content/cli-reference"
+    },
+    "head": "ccc5631ca78a6bfa8e9087cedf0cb75730b8dd27"
+  }
+]

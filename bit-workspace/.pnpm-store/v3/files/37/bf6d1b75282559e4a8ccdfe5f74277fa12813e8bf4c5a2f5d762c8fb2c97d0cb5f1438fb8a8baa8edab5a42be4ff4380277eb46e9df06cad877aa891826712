@@ -1,0 +1,251 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getResultFromFiles = exports.getConfig = exports.patternsToArray = void 0;
+const path_1 = require("path");
+const fs_extra_1 = require("fs-extra");
+const minimatch_1 = __importDefault(require("minimatch"));
+const lodash_1 = require("lodash");
+const tester_1 = require("@teambit/tester");
+const tests_results_1 = require("@teambit/tests-results");
+const component_1 = require("@teambit/component");
+const node_utils_esm_loader_1 = __importDefault(require("@teambit/node.utils.esm-loader"));
+const url_1 = require("url");
+const mlly_1 = require("mlly");
+const vitest_error_1 = require("./vitest-error");
+const getVite = async (rootPath) => {
+    const rootPathUrl = (0, url_1.pathToFileURL)(rootPath);
+    const path = await (0, mlly_1.resolve)('vite', {
+        url: rootPathUrl
+    });
+    if (!path)
+        throw new Error('[vitest-tester]: `vite` is required to be installed');
+    const vite = await (0, node_utils_esm_loader_1.default)((0, url_1.fileURLToPath)(path));
+    return vite;
+};
+// pattern utils
+const resolvePattern = (pattern, rootDirs) => {
+    return rootDirs.map((dir) => (0, path_1.resolve)(dir, pattern));
+};
+const resolvePatternEntry = (patternEntry) => {
+    const { componentDir, paths } = patternEntry;
+    return paths.map((p) => {
+        if (p.relative.startsWith('!')) {
+            return `!${componentDir}${p.relative.slice(1)}`;
+        }
+        return (0, path_1.resolve)(componentDir, p.path);
+    });
+};
+const resolveComponentPattern = (component, patternEntry, opts, context) => {
+    if (opts.resolveSpecPaths) {
+        return opts.resolveSpecPaths(component, context);
+    }
+    const customPatterns = opts.patterns;
+    // If pattern were provided to the specific instance of the tester, use them
+    if (customPatterns && !(0, lodash_1.isEmpty)(customPatterns)) {
+        customPatterns.map((customPattern) => {
+            const rootDirs = opts.roots || [patternEntry.componentDir];
+            return resolvePattern(customPattern, rootDirs);
+        });
+    }
+    const resolvedPatterns = resolvePatternEntry(patternEntry);
+    return resolvedPatterns;
+};
+// input utils
+const patternsToArray = (opts, context) => {
+    const patternArray = (0, lodash_1.flatten)(context.patterns
+        .toArray()
+        .map(([component, patternEntry]) => resolveComponentPattern(component, patternEntry, opts, context)));
+    if (path_1.sep === '\\') {
+        return patternArray.map((pattern) => pattern.replace(/\\/g, '/'));
+    }
+    return patternArray;
+};
+exports.patternsToArray = patternsToArray;
+const ensurePackageJson = (dir) => {
+    const packageJsonPath = (0, path_1.resolve)(dir, 'package.json');
+    if (!(0, fs_extra_1.existsSync)(packageJsonPath)) {
+        (0, fs_extra_1.writeJSONSync)(packageJsonPath, {});
+    }
+};
+const getConfig = async (configPath, context, depResolver, watch) => {
+    const packageNames = context.components.map((component) => depResolver.getPackageName(component));
+    const defaultExclude = [
+        '**/node_modules/**',
+        '**/cypress/**',
+        '**/.{idea,git,cache,output,temp}/**',
+        '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*'
+    ];
+    // TODO: remove this once we have a better way to handle this
+    ensurePackageJson(context.rootPath);
+    const config = {
+        root: context.rootPath,
+        configFile: false,
+        envFile: false,
+        plugins: [],
+        server: {
+            fs: {
+                strict: false
+            },
+            watch: {
+                ignored: packageNames.map((m) => `!**/node_modules/${m}/**`),
+            }
+        },
+        cacheDir: (0, path_1.resolve)(context.rootPath, 'node_modules', '.vitest'),
+        test: {
+            globals: true,
+            environment: 'jsdom',
+            root: context.rootPath,
+            exclude: defaultExclude,
+            testTimeout: 10000,
+            server: {
+                deps: {
+                    // @ts-ignore
+                    // web: {
+                    //   transformCss: true,
+                    //   transformAssets: true
+                    // },  
+                    inline: [/^(?!.*vitest).*$/],
+                }
+            },
+        }
+    };
+    if (context.debug) {
+        // Nothing to do with Vitest
+    }
+    if (context.coverage) {
+        config.test.coverage = {
+            provider: 'v8',
+            enabled: true,
+        };
+    }
+    config.test.watch = context.watch || watch;
+    const { mergeConfig, loadConfigFromFile } = await getVite(context.rootPath);
+    const vitestConfig = await loadConfigFromFile({
+        command: 'build',
+        mode: 'development'
+    }, configPath);
+    const realVitestConfig = vitestConfig?.config || {};
+    const result = mergeConfig(config, realVitestConfig);
+    return result;
+};
+exports.getConfig = getConfig;
+// output utils
+const getTaskState = (status) => {
+    switch (status) {
+        case 'pass':
+            return 'passed';
+        case 'fail':
+            return 'failed';
+        case 'skip':
+            return 'skipped';
+        case 'todo':
+            return 'todo';
+        default:
+            return 'pending';
+    }
+};
+const traverseTask = (task, ancestor = []) => {
+    const resultList = [];
+    const errorList = [];
+    const info = {
+        resultList,
+        pass: 0,
+        failed: 0,
+        pending: 0,
+        duration: 0,
+        slow: false, // TODO: calculate slow
+        errorList,
+    };
+    if (task.type === 'test') {
+        const error = task.result?.errors?.[0];
+        const errorStr = error?.message || error?.stack;
+        const status = getTaskState(task.result?.state);
+        switch (status) {
+            case 'passed':
+                info.pass += 1;
+                break;
+            case 'failed':
+                info.failed += 1;
+                break;
+            case 'pending':
+                info.pending += 1;
+                break;
+            default:
+                break;
+        }
+        const isFailure = status === 'failed';
+        info.duration += task.result?.duration || 0;
+        resultList.push(new tests_results_1.TestResult(ancestor, task.name, status, task.result?.duration, isFailure ? undefined : errorStr, isFailure ? errorStr : undefined));
+    }
+    if (task.type === 'suite') {
+        errorList.push(...(task.result?.errors || []));
+        task.tasks.forEach(subTask => {
+            const subInfo = traverseTask(subTask, [...ancestor]);
+            info.pass += subInfo.pass;
+            info.failed += subInfo.failed;
+            info.pending += subInfo.pending;
+            info.duration += subInfo.duration;
+            info.slow = info.slow || subInfo.slow;
+            resultList.push(...subInfo.resultList);
+            errorList.push(...subInfo.errorList);
+        });
+    }
+    return info;
+};
+const genErrorsFromTests = (files, unhandledErrors) => {
+    const errors = [];
+    files.forEach(file => {
+        file.tests.forEach(test => {
+            if (test.error) {
+                errors.push(new vitest_error_1.VitestError(test.error));
+            }
+            if (test.failure) {
+                errors.push(new vitest_error_1.VitestError(test.failure));
+            }
+        });
+    });
+    unhandledErrors.forEach((error) => {
+        errors.push(error);
+    });
+    return errors;
+};
+const getResultFromFiles = (files, errors, opts, testerContext) => {
+    const componentMap = component_1.ComponentMap.as(testerContext.patterns.components, (component) => {
+        const componentPatternValue = testerContext.patterns.get(component);
+        if (!componentPatternValue)
+            return [];
+        const [currComponent, patternEntry] = componentPatternValue;
+        const resolvedPatterns = resolveComponentPattern(currComponent, patternEntry, opts, testerContext);
+        return files.filter(file => resolvedPatterns.filter((resolvedPattern) => (0, minimatch_1.default)(file.filepath, resolvedPattern)).length > 0);
+    });
+    const componentResults = componentMap.toArray().map(([component, componentFiles]) => {
+        const componentPatternValue = testerContext.patterns.get(component);
+        if (!componentPatternValue)
+            return undefined;
+        const [, patternEntry] = componentPatternValue;
+        const tests = [];
+        const fileErrors = [];
+        componentFiles.forEach(file => {
+            const { pass, failed, pending, duration, slow, resultList, errorList, } = traverseTask(file);
+            let fileError;
+            if (errorList.length > 0) {
+                fileError = new Error(errorList.map(e => e.stackStr || '').join('\n'));
+                fileErrors.push(fileError);
+            }
+            tests.push(new tests_results_1.TestsFiles((0, path_1.relative)(patternEntry.componentDir, file.filepath), resultList, pass, failed, pending, duration, slow, fileError));
+        });
+        const totalErrors = genErrorsFromTests(tests, [...errors, ...fileErrors]);
+        return {
+            componentId: component.id,
+            results: new tests_results_1.TestsResult(tests, totalErrors.length === 0, 0),
+            errors: totalErrors,
+        };
+    });
+    const result = (0, lodash_1.compact)(componentResults);
+    return new tester_1.Tests(result);
+};
+exports.getResultFromFiles = getResultFromFiles;
+//# sourceMappingURL=utils.js.map

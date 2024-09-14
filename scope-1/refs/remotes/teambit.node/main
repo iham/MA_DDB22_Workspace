@@ -1,0 +1,51 @@
+[
+  {
+    "id": {
+      "scope": "teambit.node",
+      "name": "node"
+    },
+    "head": "4afb4b7ed4b95ff22efa4256723dab3813a872b8"
+  },
+  {
+    "id": {
+      "scope": "teambit.node",
+      "name": "deps-detectors/detective-es6"
+    },
+    "head": "3a509510f6ac95e55a9ce3341cf7913c347593ad"
+  },
+  {
+    "id": {
+      "scope": "teambit.node",
+      "name": "deps-detectors/parser-helper"
+    },
+    "head": "a5797210ebb85c4c31ed513c7ceba6b6d3129bc8"
+  },
+  {
+    "id": {
+      "scope": "teambit.node",
+      "name": "generator/node-starters"
+    },
+    "head": "7aa53d213aaf3877e6c287b816b29c89f45c5ad9"
+  },
+  {
+    "id": {
+      "scope": "teambit.node",
+      "name": "generator/node-templates"
+    },
+    "head": "2200f8c99d887bcb25e84017d960d6a485f66edc"
+  },
+  {
+    "id": {
+      "scope": "teambit.node",
+      "name": "utils/esm-loader"
+    },
+    "head": "6f241f37ee1d07294e11a44bedc42186ddb7b7d0"
+  },
+  {
+    "id": {
+      "scope": "teambit.node",
+      "name": "node-async-esm"
+    },
+    "head": "1ae71e19b3396940b7f92047abdaa721b94e1801"
+  }
+]

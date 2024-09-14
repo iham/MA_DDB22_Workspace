@@ -1,0 +1,16 @@
+[
+  {
+    "id": {
+      "scope": "learnbit.base-react",
+      "name": "navigation/my-router-adapter"
+    },
+    "head": "1157a91492c2d749261befd1dc93886f37559840"
+  },
+  {
+    "id": {
+      "scope": "learnbit.base-react",
+      "name": "navigation/my-router"
+    },
+    "head": "fe7ad4614fae03e5713680dadc90ccac17ac1ec3"
+  }
+]

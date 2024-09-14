@@ -1,0 +1,37 @@
+[
+  {
+    "id": {
+      "scope": "teambit.toolbox",
+      "name": "fs/hard-link-directory"
+    },
+    "head": "a76d9a5c4f004ed70c3247f86d569f5124ef2d02"
+  },
+  {
+    "id": {
+      "scope": "teambit.toolbox",
+      "name": "string/ellipsis"
+    },
+    "head": "772171787958eb7511ee3ada1dccb88d466dc465"
+  },
+  {
+    "id": {
+      "scope": "teambit.toolbox",
+      "name": "network/get-port"
+    },
+    "head": "e817dd027098f34ed410dc9993bac8949fb0bf95"
+  },
+  {
+    "id": {
+      "scope": "teambit.toolbox",
+      "name": "path/path"
+    },
+    "head": "a10694a90a6fbea7bcbc428e91291f58811fa8e0"
+  },
+  {
+    "id": {
+      "scope": "teambit.toolbox",
+      "name": "performance/v8-cache"
+    },
+    "head": "330acee90ac15d3d8480571d0706d86293a6c343"
+  }
+]

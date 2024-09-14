@@ -1,0 +1,16 @@
+[
+  {
+    "id": {
+      "scope": "teambit.graphql",
+      "name": "contexts/graphql-provider"
+    },
+    "head": "fbba28b36c5779975b948d84f429161fdfb899e9"
+  },
+  {
+    "id": {
+      "scope": "teambit.graphql",
+      "name": "hooks/use-query-light"
+    },
+    "head": "1957b76fd5673a244e9ebb0208c4f9631aa50163"
+  }
+]

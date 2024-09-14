@@ -1,0 +1,27 @@
+{
+  "name": "@teambit/react.jest.react-jest",
+  "version": "1.0.30",
+  "homepage": "https://bit.cloud/teambit/react/jest/react-jest",
+  "main": "dist/index.js",
+  "componentId": {
+    "scope": "teambit.react",
+    "name": "jest/react-jest",
+    "version": "1.0.30"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "29.3.1",
+    "react-app-polyfill": "3.0.0",
+    "@testing-library/jest-dom": "5.16.5",
+    "@babel/preset-react": "^7.23.3",
+    "@teambit/defender.jest-tester": "2.0.12"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.20",
+    "@types/node": "12.20.4",
+    "@babel/runtime": "7.20.0"
+  },
+  "peerDependencies": {},
+  "license": "SEE LICENSE IN UNLICENSED",
+  "optionalDependencies": {},
+  "peerDependenciesMeta": {}
+}

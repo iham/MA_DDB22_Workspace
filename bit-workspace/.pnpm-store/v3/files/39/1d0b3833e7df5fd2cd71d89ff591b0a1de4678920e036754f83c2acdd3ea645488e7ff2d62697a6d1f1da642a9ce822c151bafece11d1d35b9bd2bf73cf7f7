@@ -1,0 +1,25 @@
+{
+  "name": "@teambit/toolbox.path.path",
+  "version": "0.0.2",
+  "homepage": "https://bit.cloud/teambit/toolbox/path/path",
+  "main": "dist/index.js",
+  "componentId": {
+    "scope": "teambit.toolbox",
+    "name": "path/path",
+    "version": "0.0.2"
+  },
+  "dependencies": {
+    "normalize-path": "3.0.0"
+  },
+  "devDependencies": {
+    "@types/normalize-path": "^3.0.0",
+    "@types/mocha": "9.1.0",
+    "@types/jest": "26.0.20",
+    "@types/node": "12.20.4",
+    "@babel/runtime": "7.20.0"
+  },
+  "peerDependencies": {},
+  "license": "SEE LICENSE IN LICENSE",
+  "optionalDependencies": {},
+  "peerDependenciesMeta": {}
+}

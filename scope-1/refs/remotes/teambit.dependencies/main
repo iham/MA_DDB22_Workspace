@@ -1,0 +1,9 @@
+[
+  {
+    "id": {
+      "scope": "teambit.dependencies",
+      "name": "modules/packages-excluder"
+    },
+    "head": "e2c8e4fcd871b855cf9a829420c8e0ba8c229b83"
+  }
+]

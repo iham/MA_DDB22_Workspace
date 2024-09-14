@@ -1,0 +1,37 @@
+[
+  {
+    "id": {
+      "scope": "teambit.component",
+      "name": "component-id"
+    },
+    "head": "679ee4fb91654c9b02cbe7ca2a817a2b0f4d65af"
+  },
+  {
+    "id": {
+      "scope": "teambit.component",
+      "name": "legacy-bit-id"
+    },
+    "head": "7810ecd715ad056204d0726c4f2701e2ff00e0e1"
+  },
+  {
+    "id": {
+      "scope": "teambit.component",
+      "name": "component-version"
+    },
+    "head": "83304f887a8ba31841a77df39631effacbbf0c88"
+  },
+  {
+    "id": {
+      "scope": "teambit.component",
+      "name": "modules/component-url"
+    },
+    "head": "91aa27d1426646070271a19543a7fc279ffea9bf"
+  },
+  {
+    "id": {
+      "scope": "teambit.component",
+      "name": "ui/hooks/use-fetch-docs"
+    },
+    "head": "f2b31e941216c2adef85b2ae5841afe6e0e43d2f"
+  }
+]

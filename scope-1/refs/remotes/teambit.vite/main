@@ -1,0 +1,9 @@
+[
+  {
+    "id": {
+      "scope": "teambit.vite",
+      "name": "vitest-tester"
+    },
+    "head": "8ff225b6bb1036eb1d16467112481ce5f639760d"
+  }
+]

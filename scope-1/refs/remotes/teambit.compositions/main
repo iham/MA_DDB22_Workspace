@@ -1,0 +1,30 @@
+[
+  {
+    "id": {
+      "scope": "teambit.compositions",
+      "name": "ui/compositions-overview"
+    },
+    "head": "cfb12db47613795e8ccbb9acbd8b22112f1963f6"
+  },
+  {
+    "id": {
+      "scope": "teambit.compositions",
+      "name": "model/composition-type"
+    },
+    "head": "3a549f971819c052287ffacb8ab7afb6d757f383"
+  },
+  {
+    "id": {
+      "scope": "teambit.compositions",
+      "name": "ui/composition-card"
+    },
+    "head": "03112b6a40b5ac5121a6a28721f6124dbb88e965"
+  },
+  {
+    "id": {
+      "scope": "teambit.compositions",
+      "name": "model/composition-id"
+    },
+    "head": "921c56b1c0bc839cefffae7f479a8302b188c4f4"
+  }
+]

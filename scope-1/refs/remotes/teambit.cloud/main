@@ -1,0 +1,9 @@
+[
+  {
+    "id": {
+      "scope": "teambit.cloud",
+      "name": "cloud-provider"
+    },
+    "head": "efea5193cae0b410800f9630476beee7a17632b0"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": {
+      "scope": "teambit.envs",
+      "name": "docs/env-overview-template"
+    },
+    "head": "cbe9683463a97653dda5507cbb8b367329acb8d6"
+  }
+]

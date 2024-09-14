@@ -1,0 +1,30 @@
+[
+  {
+    "id": {
+      "scope": "teambit.evangelist",
+      "name": "elements/icon"
+    },
+    "head": "a24e2243569e32c87f7ba2635210e3e1721cacb1"
+  },
+  {
+    "id": {
+      "scope": "teambit.evangelist",
+      "name": "theme/evangelist-theme"
+    },
+    "head": "4284ecb88ced5cbc14dc395d3512e4b4842bf27b"
+  },
+  {
+    "id": {
+      "scope": "teambit.evangelist",
+      "name": "theme/brands"
+    },
+    "head": "c541f4ef5b0d9ec9d880a865e7964f38709c80e9"
+  },
+  {
+    "id": {
+      "scope": "teambit.evangelist",
+      "name": "theme/icon-font"
+    },
+    "head": "0f426512e472e8a917c13e6aed31f91e816e0fd9"
+  }
+]

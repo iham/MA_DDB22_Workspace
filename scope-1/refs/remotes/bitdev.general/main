@@ -1,0 +1,16 @@
+[
+  {
+    "id": {
+      "scope": "bitdev.general",
+      "name": "envs/bit-env"
+    },
+    "head": "a0d9a47d667a0485ad19c2647db2bb89dda6a74c"
+  },
+  {
+    "id": {
+      "scope": "bitdev.general",
+      "name": "envs/bit-aspect-env"
+    },
+    "head": "cba1a7416a1fb303d3356e8b21aa049a59a2a69c"
+  }
+]

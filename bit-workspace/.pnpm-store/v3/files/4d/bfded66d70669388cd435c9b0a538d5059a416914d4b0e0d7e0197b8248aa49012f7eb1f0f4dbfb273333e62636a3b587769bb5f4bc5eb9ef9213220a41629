@@ -1,0 +1,11 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isEsmModule = void 0;
+const esm_loader_1 = __importDefault(require("./esm-loader"));
+var is_esm_module_1 = require("./is-esm-module");
+Object.defineProperty(exports, "isEsmModule", { enumerable: true, get: function () { return is_esm_module_1.isEsmModule; } });
+exports.default = esm_loader_1.default;
+//# sourceMappingURL=index.js.map

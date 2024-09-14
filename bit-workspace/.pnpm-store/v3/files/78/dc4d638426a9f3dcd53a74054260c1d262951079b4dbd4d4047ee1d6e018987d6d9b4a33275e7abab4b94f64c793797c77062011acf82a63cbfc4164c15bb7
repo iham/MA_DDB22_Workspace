@@ -1,0 +1,4 @@
+import esmLoader from './esm-loader';
+
+export { isEsmModule } from './is-esm-module';
+export default esmLoader;
