@@ -132,6 +132,6 @@ dist
 # MacOS
 **/.DS_Store
 
-**/.bit/
+**/.bit
 **/.pnpm-store/
 **/node_modules/
