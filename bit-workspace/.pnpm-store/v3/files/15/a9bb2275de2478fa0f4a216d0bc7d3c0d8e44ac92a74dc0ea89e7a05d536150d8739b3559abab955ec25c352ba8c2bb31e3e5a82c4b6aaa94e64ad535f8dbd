@@ -1,6 +1,0 @@
-import { pathToFileURL } from 'node:url';
-
-export default async (path: string) => {
-  const esmModule = await import(pathToFileURL(path).href);
-  return esmModule;
-};

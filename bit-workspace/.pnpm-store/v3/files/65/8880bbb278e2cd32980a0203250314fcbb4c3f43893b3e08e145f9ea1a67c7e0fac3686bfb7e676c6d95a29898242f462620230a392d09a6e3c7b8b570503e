@@ -1,6 +1,0 @@
-export declare class VitestError extends Error {
-    readonly stack?: string | undefined;
-    readonly code?: unknown;
-    readonly type?: string | undefined;
-    constructor(message: string, stack?: string | undefined, code?: unknown, type?: string | undefined);
-}

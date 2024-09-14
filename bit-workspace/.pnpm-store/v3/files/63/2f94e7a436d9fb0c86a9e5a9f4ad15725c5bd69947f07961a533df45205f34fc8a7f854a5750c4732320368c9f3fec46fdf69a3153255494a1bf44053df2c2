@@ -1,7 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const snapshotResolverBase_1 = require("./snapshotResolverBase");
-module.exports = {
-    ...(0, snapshotResolverBase_1.getResolveSnapshotModule)('dist/')
-};
-//# sourceMappingURL=snapshotResolverBuild.js.map

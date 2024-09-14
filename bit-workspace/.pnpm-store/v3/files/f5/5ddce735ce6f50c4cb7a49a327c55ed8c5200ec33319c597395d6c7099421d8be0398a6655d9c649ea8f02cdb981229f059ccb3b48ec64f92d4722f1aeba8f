@@ -1,7 +1,0 @@
-import * as compositions_0 from '/tmp/capsules-root/sign-capsules/2023-9-25/12zebkx/teambit.community_ui_content-tabs@1.0.2/dist/content-tabs.composition.js';
-import * as overview_0 from '/tmp/capsules-root/sign-capsules/2023-9-25/12zebkx/teambit.community_ui_content-tabs@1.0.2/dist/content-tabs.docs.mdx';
-
-export const compositions = [compositions_0];
-export const overview = [overview_0];
-
-export const compositions_metadata = {"compositions":[{"displayName":"Basic content tabs","identifier":"BasicContentTabs"},{"displayName":"Content tabs with url param","identifier":"ContentTabsWithUrlParam"},{"displayName":"Multiple tabs","identifier":"MultipleTabs"},{"displayName":"Content tabs with jsx title","identifier":"ContentTabsWithJsxTitle"}]};
