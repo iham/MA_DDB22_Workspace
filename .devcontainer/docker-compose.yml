@@ -9,7 +9,7 @@ services:
   #   volumes:
   #     - logger:/fluentd/log
 
-  bit-workspace:
+  workspace:
     image: iham/bit-vscode-workspace:latest
     restart: unless-stopped
     volumes:
@@ -22,23 +22,21 @@ services:
     #     fluentd-address: "logger:24224"
     #     tag: "my-db"
 
-  scope-1:
+  mfe-1:
     image: iham/bit-server:latest
     restart: unless-stopped
     environment:
-      - SCOPE_NAME=scope-1
     volumes:
-      - scope-1:/bit-scope
+      - mfe-1:/data
     ports: 
       - 8100:3000
 
-  scope-2:
+  mfe-2:
     image: iham/bit-server:latest
     restart: unless-stopped
     environment:
-      - SCOPE_NAME=scope-2
     volumes:
-      - scope-2:/bit-scope
+      - mfe-2:/data
     ports: 
       - 8200:3000
 
@@ -50,21 +48,21 @@ volumes:
   #     type: none
   #     device: "../logger"
   #     o: bind
-  bit-workspace:
+  workspace:
     driver: local
     driver_opts:
       type: none
-      device: "../bit-workspace"
+      device: "../workspace"
       o: bind
-  scope-1:
+  mfe-1:
     driver: local
     driver_opts:
       type: none
-      device: "../scope-1"
+      device: "../mfe-1"
       o: bind
-  scope-2:
+  mfe-2:
     driver: local
     driver_opts:
       type: none
-      device: "../scope-2"
+      device: "../mfe-2"
       o: bind

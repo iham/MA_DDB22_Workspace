@@ -1,1 +1,0 @@
-export { TestPlatform } from './test-platform.bit-app.js';

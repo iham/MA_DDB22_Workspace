@@ -1,9 +1,0 @@
-[
-  {
-    "id": {
-      "scope": "bitdev.node",
-      "name": "modules/load-esm-module"
-    },
-    "head": "79c5fe7a807831e278fe0a80dbbb46217e9e8c6d"
-  }
-]
