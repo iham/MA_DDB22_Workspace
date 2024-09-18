@@ -1,5 +1,5 @@
 {
   "dockerComposeFile": "docker-compose.yml",
   "service": "bit-workspace",
-  "workspaceFolder": "/workspace"
+  "workspaceFolder": "/bit-workspace"
 }

@@ -9,5 +9,19 @@
  */
 
 {
+    "test-platform": {
+        "name": "test-platform",
+        "scope": "",
+        "version": "",
+        "defaultScope": "ihams.test-platform",
+        "mainFile": "index.ts",
+        "rootDir": "test-platform/test-platform",
+        "config": {
+            "bitdev.harmony/harmony-env@2.0.28": {},
+            "teambit.envs/envs": {
+                "env": "bitdev.harmony/harmony-env"
+            }
+        }
+    },
     "$schema-version": "17.0.0"
 }

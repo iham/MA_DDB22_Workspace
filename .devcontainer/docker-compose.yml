@@ -1,14 +1,26 @@
 name: test
 
 services:
+  # logger:
+  #   image: fluentd:latest
+  #   ports:
+  #     - 24224:24224
+  #     - 24224:24224/udp
+  #   volumes:
+  #     - logger:/fluentd/log
 
   bit-workspace:
     image: iham/bit-vscode-workspace:latest
     restart: unless-stopped
     volumes:
-      - ../bit-workspace:/bit-workspace
+      - bit-workspace:/bit-workspace
     ports: 
       - 8000:8080
+    # logging:
+    #   driver: fluentd
+    #   options:
+    #     fluentd-address: "logger:24224"
+    #     tag: "my-db"
 
   scope-1:
     image: iham/bit-server:latest
@@ -32,6 +44,18 @@ services:
 
 # Lets reflect the scopes to the local filesystem for later use and inspection
 volumes:
+  # logger:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "../logger"
+  #     o: bind
+  bit-workspace:
+    driver: local
+    driver_opts:
+      type: none
+      device: "../bit-workspace"
+      o: bind
   scope-1:
     driver: local
     driver_opts:
