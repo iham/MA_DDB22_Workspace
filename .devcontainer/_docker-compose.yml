@@ -10,10 +10,11 @@ services:
   #     - logger:/fluentd/log
 
   workspace:
+    name: workspace
     image: iham/bit-vscode-workspace:latest
     restart: unless-stopped
     volumes:
-      - bit-workspace:/bit-workspace
+      - workspace:/bit-workspace
     ports: 
       - 8000:8080
     # logging:
@@ -21,6 +22,13 @@ services:
     #   options:
     #     fluentd-address: "logger:24224"
     #     tag: "my-db"
+  piral-feed-server:
+    image: iham/piral-feed-server:latest
+    restart: unless-stopped
+    volumes:
+      - bit-workspace:/bit-workspace
+    ports: 
+      - 8000:8080
 
   mfe-1:
     image: iham/bit-server:latest

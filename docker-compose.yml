@@ -1,0 +1,100 @@
+name: test
+
+services:
+  # logger:
+  #   image: fluentd:latest
+  #   ports:
+  #     - 24224:24224
+  #     - 24224:24224/udp
+  #   volumes:
+  #     - logger:/fluentd/log
+
+  piral-workspace:
+    image: iham/piral-vscode-workspace:latest
+    restart: unless-stopped
+    volumes:
+      - workspace-config:/home/coder/.config
+      - piral-workspace:/home/coder/piral-workspace
+    ports: 
+      - 8001:8080
+      - 8100:1234
+    working_dir: "/home/coder/piral-workspace"
+    # environment:
+      # - "DOCKER_USER=$USER"
+    # user: ${CURRENT_UID}
+    # logging:
+    #   driver: fluentd
+    #   options:
+    #     fluentd-address: "logger:24224"
+    #     tag: "my-db"
+  piral-instance:
+    image: iham/piral-instance:latest
+    restart: unless-stopped
+    volumes:
+      - piral-instance:/piral-instance
+    ports:
+      - 8200:1234
+  # piral-feed-server:
+  #   image: iham/piral-feed-server:latest
+  #   restart: unless-stopped
+  #   volumes:
+  #     - bit-workspace:/bit-workspace
+  #   ports: 
+  #     - 8000:8080
+
+  # mfe-1:
+  #   image: iham/bit-server:latest
+  #   restart: unless-stopped
+  #   environment:
+  #   volumes:
+  #     - mfe-1:/data
+  #   ports: 
+  #     - 8100:3000
+
+  # mfe-2:
+  #   image: iham/bit-server:latest
+  #   restart: unless-stopped
+  #   environment:
+  #   volumes:
+  #     - mfe-2:/data
+  #   ports: 
+      # - 8200:3000
+
+# Lets reflect the scopes to the local filesystem for later use and inspection
+volumes:
+  workspace-config:
+    driver: local
+    driver_opts:
+      type: none
+      device: "workspace-config"
+      o: bind
+  piral-workspace:
+    driver: local
+    driver_opts:
+      type: none
+      device: "piral-workspace"
+      o: bind
+  piral-instance:
+    driver: local
+    driver_opts:
+      type: none
+      device: "piral-instance"
+      o: bind
+  # mfe-1:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "../mfe-1"
+  #     o: bind
+  # mfe-2:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "../mfe-2"
+  #     o: bind
+  # logger:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "../logger"
+  #     o: bind

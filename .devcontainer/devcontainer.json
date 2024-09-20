@@ -1,5 +1,5 @@
 {
   "dockerComposeFile": "docker-compose.yml",
-  "service": "bit-workspace",
-  "workspaceFolder": "/bit-workspace"
+  "service": "piral-workspace",
+  "workspaceFolder": "/home/coder/piral-workspace"
 }
