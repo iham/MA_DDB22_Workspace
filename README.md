@@ -22,6 +22,11 @@ This is the main sandbox for my Master Thesis Proof of Concept.
 | Node Package Manager (npm)        | 1.8.3                          |
 | Piral CLI                         | 1.6.1                          |
 
+### Usage
+The workspace is used for
+- development environment for piral (piral-workspace)
+- development environment for pilets (pilets-workspace)
+
 ## Versions of Pirals Pilet Feed Service
 | Name                              | Version                        |
 |--------------------------------   |-----------------------------   |
@@ -31,9 +36,14 @@ This is the main sandbox for my Master Thesis Proof of Concept.
 | Piral CLI                         | 1.6.1                          |
 
 ### API KEY for Pilet Feed Service
-19c0ad98-96ab-4407-accb-be4fb9aff7af
+The default API KEY for pushing pilets to the feed service is stored as a Docker Secret in secrets/piral-local-feed-service-api-key.txt
 
-The default API KEY for pushing pilets to the feed service
+### Usage
+There are two sample feed services implemented
+- https://github.com/FlorianRappl/piral-cli-local-feed/tree/main (docker-images/piral-local-feed-service)
+- https://github.com/smapiot/sample-pilet-service (docker-images/piral-sample-feed-service)
+
+
 ## Versions of Pirals Instance
 | Name                              | Version                        |
 |--------------------------------   |-----------------------------   |
