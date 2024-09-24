@@ -6,15 +6,10 @@ RUN npm install piral-cli -g
 
 RUN piral new piral-instance --bundler=webpack5
 
+COPY entrypoint.sh /usr/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
+
 WORKDIR /piral-instance
 
-ARG PORT=1234
-ENV PORT=$PORT
-
-COPY entrypoint.sh /usr/bin/entrypoint.sh
-RUN chmod +x /usr/bin/entrypoint.sh
-
-ENTRYPOINT ["/usr/bin/entrypoint.sh"]
-CMD ["piral", "debug"]
-
-EXPOSE $PORT
+CMD ["piral", "debug", "--port", "3000"]
