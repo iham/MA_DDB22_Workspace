@@ -1,0 +1,3 @@
+[submodule "docker-images/piral-sample-feed-service"]
+	path = docker-images/piral-sample-feed-service
+	url = git@github.com:iham/piral-sample-feed-service.git
