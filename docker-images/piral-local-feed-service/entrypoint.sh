@@ -23,7 +23,13 @@ fi
 
 # deal with default command (piral local-feed will be startet)
 if [ "$1" = 'piral' ]; then
-    exec dumb-init -- piral local-feed --api-key $(cat $PIRAL_FEED_SERVICE_API_KEY_FILE) --port $PORT
+    # if an api key file is passed by docker compose secrets mechanics
+    # we override the default keys in PILET_API_KEYS
+    if [[ -n "$PIRAL_FEED_SERVICE_API_KEYS_FILE" ]]; then
+        export PILET_API_KEYS=$(cat $PIRAL_FEED_SERVICE_API_KEYS_FILE | xargs | sed 's/ /,/g')
+    fi
+    # otherwise the ENV variable(s) from passing them or defaults are used
+    exec dumb-init -- piral local-feed --port $PORT
 fi
 
 # else default to run whatever the user wanted like "bash" or "sh" or "ls -la"

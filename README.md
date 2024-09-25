@@ -1,7 +1,9 @@
 # MA_DDB22_WORKSPACE
 This is the main sandbox for my Master Thesis Proof of Concept.
 
-## Versions of Local Development Environment
+## Local Development Environment
+
+### Versions
 | Name                       | Version                        |
 |-------------------------   |-----------------------------   |
 | Operating System           | MacOs Sequoa - 15.0            |
@@ -11,7 +13,15 @@ This is the main sandbox for my Master Thesis Proof of Concept.
 | Git                        | 2.43.0                         |
 | Virtual Studio (VS) Code   | 1.93.1                         |
 
-## Versions of Workspace Environment
+
+## Workspace Environment
+Working in an isolated Environment allows to develop without any Version Managers like nvm and keep your local machine simple without any further effects on other projects (KISS)
+In addition a developer does not need to have VS Code installed and can use the web interface or use the VS Code DevContainer extension to connect to the running Docker Container.
+This setup also allows for further separation of concerns (SOC) by installing Extensions, changing the Theme and other customisations of VS Code on a per project basis, to enhance the Development Experience (DX)
+
+In this project Node and Piral specific packages are installed and prepared inside the DevContainer.
+
+### Versions
 | Name                              | Version                        |
 |--------------------------------   |-----------------------------   |
 | Operating System                  | Debian 12.6 (Bookworm)         |
@@ -23,34 +33,68 @@ This is the main sandbox for my Master Thesis Proof of Concept.
 | Piral CLI                         | 1.6.1                          |
 
 ### Usage
-The workspace is used for
+The workspace Docker Image is used for
 - development environment for piral (piral-workspace)
 - development environment for pilets (pilets-workspace)
 
-## Versions of Pirals Pilet Feed Service
+## Pilet Feed Service(s)
+Piral uses a feed service to deliver Pilets to the Piral Instance (app shell)
+
+There are 2 Docker Images available:
+- iham/piral-local-feed-service
+- iham/piral-sample-feed-service
+
+Both are sample implementations using nodejs.
+To implement the Feed Service on other platforms, visit the documentation:
+https://docs.piral.io/reference/specifications/feed-api-specification
+
+
+### Versions
 | Name                              | Version                        |
 |--------------------------------   |-----------------------------   |
 | Operating System                  | Alpine 3.20                    |
 | Node                              | 22.9.0 (Current Release)       |
 | Node Package Manager (npm)        | 1.8.3                          |
+
+### Piral Sample Feed Service
+This is the base installation handling the Feed Service the register Pilets against.
+This Docker Container is not meant as an interactive workspace. If that's prefered use the Piral Local Feed Service.
+
+#### Versions
+| Name                              | Version                        |
+|--------------------------------   |-----------------------------   |
+| sample-pilet-service              | 1.8.0-pre.20240917.2           |
+
+
+### Piral Local Feed Service
+In addition to those versions, the iham/piral-local-feed-service has the Piral CLI installed which extends the CLI with the "local-feed" command.
+
+#### Versions
+| Name                              | Version                        |
+|--------------------------------   |-----------------------------   |
 | Piral CLI                         | 1.6.1                          |
-
-### API KEY for Pilet Feed Service
-The default API KEY for pushing pilets to the feed service is stored as a Docker Secret in secrets/piral-local-feed-service-api-key.txt
-
-### Usage
-There are two sample feed services implemented
-- https://github.com/FlorianRappl/piral-cli-local-feed/tree/main (docker-images/piral-local-feed-service)
-- https://github.com/smapiot/sample-pilet-service (docker-images/piral-sample-feed-service)
+| sample-pilet-service              | 1.8.3                          |
+| piral-cli-local-feed              | 0.4.0                          |
 
 
-## Versions of Pirals Instance
+### API KEY for Pilet Feed Service(s)
+The default API KEYs for pushing pilets to the feed service(s) is stored as a Docker Secret by using these files:
+- secrets/piral-local-feed-service-api-keys.txt
+- secrets/piral-sample-feed-service-api-keys.txt
+
+
+## Pirals Instance
+The Piral Instance is an app shell connecting to the Feed Service.
+That app shell can be created by using the Piral CLI in the workspace.
+After building the app shell (emulated) this can be run in a Node Docker Container.
+
+### Versions
 | Name                              | Version                        |
 |--------------------------------   |-----------------------------   |
 | Operating System                  | Alpine 3.20                    |
 | Node                              | 22.9.0 (Current Release)       |
 | Node Package Manager (npm)        | 1.8.3                          |
-| Piral CLI                         | 1.6.1                          |
+
 
 ## Structuring the workspace
 Using Docker compose to build the setup for working with multiple microfrontend instances and a composition server.

@@ -13,12 +13,12 @@ services:
     image: iham/piral-sample-feed-service:latest
     restart: unless-stopped
     secrets:
-      - piral-sample-feed-service-api-key
+      - piral-sample-feed-service-api-keys
     environment:
-      # PORT: 9000
-      PIRAL_FEED_SERVICE_API_KEY_FILE: /run/secrets/piral-sample-feed-service-api-key
+      PORT: 2000
+      PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-sample-feed-service-api-keys
     volumes:
-      - piral-sample-feed-service:/piral-feed
+      - piral-sample-feed-service:/piral-sample-feed-service
     ports:
       - 8000:9000
 
@@ -26,10 +26,10 @@ services:
     image: iham/piral-local-feed-service:latest
     restart: unless-stopped
     secrets:
-      - piral-local-feed-service-api-key
+      - piral-local-feed-service-api-keys
     environment:
       # PORT: 9000
-      PIRAL_FEED_SERVICE_API_KEY_FILE: /run/secrets/piral-local-feed-service-api-key
+      PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-local-feed-service-api-keys
     volumes:
       - piral-local-feed-service:/piral-feed
     ports:
@@ -90,7 +90,7 @@ services:
 
 # Lets reflect the scopes to the local filesystem for later use and inspection
 volumes:
-  piral-sampe-feed-service:
+  piral-sample-feed-service:
     driver: local
     driver_opts:
       type: none
@@ -141,6 +141,6 @@ volumes:
 
 secrets:
   piral-local-feed-service-api-key:
-    file: piral-local-feed-service-api-key.txt
+    file: secrets/piral-local-feed-service-api-keys.txt
   piral-sample-feed-service-api-key:
-    file: piral-sample-feed-service-api-key.txt
+    file: secret/piral-sample-feed-service-api-keys.txt
