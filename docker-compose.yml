@@ -9,6 +9,19 @@ services:
   #   volumes:
   #     - logger:/fluentd/log
 
+  piral-sample-feed-service:
+    image: iham/piral-sample-feed-service:latest
+    restart: unless-stopped
+    secrets:
+      - piral-sample-feed-service-api-key
+    environment:
+      # PORT: 9000
+      PIRAL_FEED_SERVICE_API_KEY_FILE: /run/secrets/piral-sample-feed-service-api-key
+    volumes:
+      - piral-sample-feed-service:/piral-feed
+    ports:
+      - 8000:9000
+
   piral-local-feed-service:
     image: iham/piral-local-feed-service:latest
     restart: unless-stopped
@@ -77,6 +90,12 @@ services:
 
 # Lets reflect the scopes to the local filesystem for later use and inspection
 volumes:
+  piral-sampe-feed-service:
+    driver: local
+    driver_opts:
+      type: none
+      device: "piral-sample-feed-service"
+      o: bind
   piral-local-feed-service:
     driver: local
     driver_opts:
@@ -123,3 +142,5 @@ volumes:
 secrets:
   piral-local-feed-service-api-key:
     file: piral-local-feed-service-api-key.txt
+  piral-sample-feed-service-api-key:
+    file: piral-sample-feed-service-api-key.txt
