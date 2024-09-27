@@ -24,10 +24,10 @@ In this project Node and Piral specific packages are installed and prepared insi
 ### Versions
 | Name                              | Version                        |
 |--------------------------------   |-----------------------------   |
-| Operating System                  | Debian 12.6 (Bookworm)         |
-| Git                               | 2.39.2                         |
-| Virtual Studio (VS) Code          | 1.92.2                         |
-| Virtual Studio (VS) Code Server   | 4.92.2                         |
+| Operating System                  | Alpine 3.20.3                  |
+| Git                               | 2.45.2                         |
+| Virtual Studio (VS) Code          | 1.93.1                         |
+| Virtual Studio (VS) Code Server   | 4.93.1                         |
 | Node                              | 20.17.0                        |
 | Node Package Manager (npm)        | 1.8.3                          |
 | Piral CLI                         | 1.6.1                          |

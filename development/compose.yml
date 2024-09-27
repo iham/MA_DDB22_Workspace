@@ -1,0 +1,87 @@
+name: development
+
+services:
+  # The Local Feed Service includes the CLI tools for debugging
+  piral-local-feed-service:
+    image: iham/piral-local-feed-service:latest
+    restart: unless-stopped
+    secrets:
+      - piral-local-feed-service-api-keys
+    environment:
+      PORT: 9000
+      PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-local-feed-service-api-keys
+    volumes:
+      - piral-local-feed-service:/piral-feed
+    ports:
+      - 8000:9000
+
+  # The Instance Workspace is a separated VS Code Workspace dedicated for developing the Piral Instance (App Shell)
+  piral-instance-workspace:
+    image: iham/piral-vscode-workspace:latest
+    # depends_on:
+    #   - piral-local-feed-service
+    restart: unless-stopped
+    volumes:
+      - piral-instance-workspace-config:/home/piral/.config
+      - piral-instance-workspace:/home/piral/instance-workspace
+    ports: 
+      - 8001:8080
+      - 8100:1234
+    working_dir: "/home/piral/instance-workspace"
+    # environment:
+      # - "DOCKER_USER=$USER"
+    # user: ${CURRENT_UID}
+
+  # The Pilets Workspace is a separated VS Code Workspace dedicated for developing Piral Pilets (Micro Frontends)
+  piral-pilets-workspace:  
+    image: iham/piral-vscode-workspace:latest
+    # depends_on:
+    #   - piral-local-feed-service
+    restart: unless-stopped
+    volumes:
+      - piral-pilets-workspace-config:/home/piral/.config
+      - piral-pilets-workspace:/home/piral/pilets-workspace
+    ports: 
+      - 8001:8080
+      - 8100:1234
+    working_dir: "/home/piral/pilets-workspace"
+    # environment:
+      # - "DOCKER_USER=$USER"
+    # user: ${CURRENT_UID}
+
+# All Docker Volumes are reflected to the local filesystem inside this project to make change versionable in git
+volumes:
+  piral-local-feed-service:
+    driver: local
+    driver_opts:
+      type: none
+      device: "docker-volumes/piral-local-feed-service"
+      o: bind
+  piral-instance-workspace:
+    driver: local
+    driver_opts:
+      type: none
+      device: "docker-volumes/piral-instance/workspace"
+      o: bind
+  piral-instance-workspace-config:
+    driver: local
+    driver_opts:
+      type: none
+      device: "docker-volumes/piral-instance-workspace/config"
+      o: bind
+  piral-pilets-workspace:
+    driver: local
+    driver_opts:
+      type: none
+      device: "docker-volumes/piral-pilets/workspace"
+      o: bind
+  piral-pilets-workspace-config:
+    driver: local
+    driver_opts:
+      type: none
+      device: "docker-volumes/piral-pilets-workspace/config"
+      o: bind
+  
+secrets:
+  piral-local-feed-service-api-key:
+    file: docker-secrets/piral-local-feed-service-api-keys.txt

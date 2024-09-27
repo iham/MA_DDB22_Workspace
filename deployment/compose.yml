@@ -1,0 +1,48 @@
+name: deployment
+
+services:
+
+  # The Piral Sample Feed Service is a barebone pilet database with an API to register and deliver Pilets.
+  piral-sample-feed-service:
+    image: iham/piral-sample-feed-service:latest
+    restart: unless-stopped
+    secrets:
+      - piral-sample-feed-service-api-keys
+    environment:
+      PORT: 9000
+      PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-sample-feed-service-api-keys
+    volumes:
+      - piral-sample-feed-service:/piral-feed
+    ports:
+      - 8000:9000
+
+  # The Piral Instance is a running Node server to deliver a previously developed and build Piral Instance (App Shell)
+  piral-instance:
+    image: iham/piral-instance:latest
+    # depends_on:
+    #   - piral-sample-feed-service
+    restart: unless-stopped
+    volumes:
+      - piral-instance:/piral-instance
+    ports: 
+      - 8080:1234
+
+
+# All Docker Volumes are reflected to the local filesystem inside this project to make change versionable in git
+volumes:
+  piral-sample-feed-service:
+    driver: local
+    driver_opts:
+      type: none
+      device: "docker-volumes/piral-sample-feed-service"
+      o: bind
+  piral-instance:
+    driver: local
+    driver_opts:
+      type: none
+      device: "docker-volumes/piral-instance"
+      o: bind
+  
+secrets:
+  piral-sample-feed-service-api-key:
+    file: docker-secrets/piral-sample-feed-service-api-keys.txt

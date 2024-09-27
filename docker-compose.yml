@@ -9,59 +9,61 @@ services:
   #   volumes:
   #     - logger:/fluentd/log
 
-  piral-sample-feed-service:
-    image: iham/piral-sample-feed-service:latest
-    restart: unless-stopped
-    secrets:
-      - piral-sample-feed-service-api-keys
-    environment:
-      PORT: 2000
-      PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-sample-feed-service-api-keys
-    volumes:
-      - piral-sample-feed-service:/piral-sample-feed-service
-    ports:
-      - 8000:9000
+  # piral-sample-feed-service:
+  #   image: iham/piral-sample-feed-service:latest
+  #   restart: unless-stopped
+  #   secrets:
+  #     - piral-sample-feed-service-api-keys
+  #   environment:
+  #     PORT: 9000
+  #     PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-sample-feed-service-api-keys
+  #   volumes:
+  #     - piral-sample-feed-service:/piral-sample-feed-service
+  #   ports:
+  #     - 8000:9000
 
-  piral-local-feed-service:
-    image: iham/piral-local-feed-service:latest
-    restart: unless-stopped
-    secrets:
-      - piral-local-feed-service-api-keys
-    environment:
-      # PORT: 9000
-      PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-local-feed-service-api-keys
-    volumes:
-      - piral-local-feed-service:/piral-feed
-    ports:
-      - 8000:9000
+  # piral-local-feed-service:
+  #   image: iham/piral-local-feed-service:latest
+  #   restart: unless-stopped
+  #   secrets:
+  #     - piral-local-feed-service-api-keys
+  #   environment:
+  #     PORT: 9000
+  #     PIRAL_FEED_SERVICE_API_KEYS_FILE: /run/secrets/piral-local-feed-service-api-keys
+  #   volumes:
+  #     - piral-local-feed-service:/piral-feed
+  #   ports:
+  #     - 8000:9000
 
   piral-workspace:
-    image: iham/piral-vscode-workspace:latest
+    image: iham/piral-workspace:latest
     # depends_on:
     #   - piral-local-feed-service
     restart: unless-stopped
     volumes:
-      - workspace-config:/home/coder/.config
-      - piral-workspace:/home/coder/piral-workspace
+      - piral-workspace-config:/home/node/.config
+      - piral-workspace:/piral/workspace
     ports: 
-      - 8001:8080
+      - 8080:8080
       - 8100:1234
-    working_dir: "/home/coder/piral-workspace"
-    # environment:
-      # - "DOCKER_USER=$USER"
+    working_dir: "/piral/workspace"
+    environment:
+      - "DOCKER_USER=$USER"
     # user: ${CURRENT_UID}
     # logging:
     #   driver: fluentd
     #   options:
     #     fluentd-address: "logger:24224"
     #     tag: "my-db"
-  piral-instance:
-    image: iham/piral-instance:latest
-    restart: unless-stopped
-    volumes:
-      - piral-instance:/piral-instance
-    ports:
-      - 8200:1234
+  
+  # Piral Instance provides a running app shell
+  # piral-instance:
+  #   image: iham/piral-instance:latest
+  #   restart: unless-stopped
+  #   volumes:
+  #     - piral-instance:/piral-instance
+  #   ports:
+  #     - 8200:1234
   # piral-feed-server:
   #   image: iham/piral-feed-server:latest
   #   restart: unless-stopped
@@ -90,23 +92,23 @@ services:
 
 # Lets reflect the scopes to the local filesystem for later use and inspection
 volumes:
-  piral-sample-feed-service:
+  # piral-sample-feed-service:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "piral-sample-feed-service"
+  #     o: bind
+  # piral-local-feed-service:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "piral-local-feed-service"
+  #     o: bind
+  piral-workspace-config:
     driver: local
     driver_opts:
       type: none
-      device: "piral-sample-feed-service"
-      o: bind
-  piral-local-feed-service:
-    driver: local
-    driver_opts:
-      type: none
-      device: "piral-local-feed-service"
-      o: bind
-  workspace-config:
-    driver: local
-    driver_opts:
-      type: none
-      device: "workspace-config"
+      device: "piral-workspace-config"
       o: bind
   piral-workspace:
     driver: local
