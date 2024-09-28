@@ -42,13 +42,14 @@ services:
     restart: unless-stopped
     volumes:
       - piral-workspace-config:/home/node/.config
-      - piral-workspace:/piral/workspace
+      # - test-workspace:/piral/workspace
+      # - piral-workspace:/piral/workspace
     ports: 
       - 8080:8080
       - 8100:1234
-    working_dir: "/piral/workspace"
-    environment:
-      - "DOCKER_USER=$USER"
+    # working_dir: "/piral/workspace"
+    # environment:
+      # - "DOCKER_USER=$USER"
     # user: ${CURRENT_UID}
     # logging:
     #   driver: fluentd
@@ -116,6 +117,12 @@ volumes:
       type: none
       device: "piral-workspace"
       o: bind
+  test-workspace:
+    driver: local
+    driver_opts:
+      type: bind
+      source: "."
+      target: "/piral/workspace"
   piral-instance:
     driver: local
     driver_opts:
