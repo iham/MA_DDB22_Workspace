@@ -12,7 +12,7 @@ RUN ARCH="$(dpkg --print-architecture)" \
 FROM node:20-alpine
 ARG CODE_SERVER_VERSION
 
-RUN apk add alpine-sdk bash dumb-init git-lfs krb5-pkinit krb5-dev krb5 libstdc++ libc6-compat python3 sudo shadow
+RUN apk add alpine-sdk bash dumb-init git-lfs krb5-pkinit krb5-dev krb5 libstdc++ libc6-compat openssh-client python3 sudo shadow
 RUN git lfs install
 
 # RUN sed -i "s/# en_US.UTF-8/en_US.UTF-8/" /etc/locale.gen \
