@@ -35,21 +35,20 @@ services:
   #   ports:
   #     - 8000:9000
 
-  piral-workspace:
+  piral-instance-workspace:
     image: iham/piral-workspace:latest
     # depends_on:
     #   - piral-local-feed-service
     restart: unless-stopped
+    # working_dir: /piral/instance-workspace
     volumes:
-      - piral-workspace-config:/home/node/.config
-      # - test-workspace:/piral/workspace
-      # - piral-workspace:/piral/workspace
+      - ./:/piral
+      - ./piral-workspace-config:/home/node/.config
     ports: 
       - 8080:8080
       - 8100:1234
-    # working_dir: "/piral/workspace"
-    # environment:
-      # - "DOCKER_USER=$USER"
+    environment:
+      - "DOCKER_USER=$USER"
     # user: ${CURRENT_UID}
     # logging:
     #   driver: fluentd
@@ -105,24 +104,24 @@ volumes:
   #     type: none
   #     device: "piral-local-feed-service"
   #     o: bind
-  piral-workspace-config:
-    driver: local
-    driver_opts:
-      type: none
-      device: "piral-workspace-config"
-      o: bind
-  piral-workspace:
-    driver: local
-    driver_opts:
-      type: none
-      device: "piral-workspace"
-      o: bind
-  test-workspace:
-    driver: local
-    driver_opts:
-      type: bind
-      source: "."
-      target: "/piral/workspace"
+  # piral-workspace-config:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "piral-workspace-config"
+  #     o: bind
+  # piral-workspace:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: "piral-workspace"
+  #     o: bind
+  # test-workspace:
+  #   driver: local
+  #   driver_opts:
+  #     type: bind
+  #     source: "."
+  #     target: "/piral"
   piral-instance:
     driver: local
     driver_opts:
